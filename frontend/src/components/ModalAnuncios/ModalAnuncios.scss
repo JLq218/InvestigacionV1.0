@@ -1,0 +1,83 @@
+.modal-anuncios {
+    font-family: Montserrat, sans-serif;
+    &__header {
+        background: linear-gradient(135deg, #2185d0, #21ba45);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+    h1 {
+        font-size: 1.6rem !important;
+        margin-bottom: 0.5em;
+        color: white !important;
+        @media (max-width: 768px) {
+            font-size: 1.4rem !important;
+        }   
+    }
+
+    p {
+        font-size: 1.7rem;
+        // font-style: italic;
+        color: white;
+        font-weight: bold;
+        margin: 0;
+        @media (max-width: 768px) {
+            font-size: 1.4rem !important;
+        }  
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
+  }
+  .modal-anuncios__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        padding: 0.5rem;
+    }
+  }
+
+
+  .modal-anuncios__info {
+    font-size: 1rem;
+    line-height: 1.6;
+    h3 {
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .modal-anuncios__registro {
+    text-align: center;
+
+    p {
+      margin: 1rem 0;
+    }
+  }
+
+  .modal-anuncios__acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ui.button{
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }      
+    }
+  }
+}

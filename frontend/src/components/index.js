@@ -6,3 +6,4 @@ export * from "./Footer";
 export * from "./TableIntegrantes";
 export * from "./TableNormativas";
 export * from "./MenuRedesSociales";
+export * from "./ModalAnuncios";

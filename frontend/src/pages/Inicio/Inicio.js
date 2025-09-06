@@ -3,6 +3,7 @@ import "./Inicio.scss";
 import { Button, Grid, Dimmer, Loader } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+import { ModalAnuncios } from "../../components";
 import imagen from "../../images/imagenHome.png";
 export function Inicio() {
   const [imagenCargada, setImagenCargada] = useState(false);
@@ -23,6 +24,7 @@ export function Inicio() {
       <Dimmer active={!imagenCargada} inverted>
         <Loader size="big">Espere un momento</Loader>
       </Dimmer>
+      <ModalAnuncios />
       <Grid
         className="gridInicio"
         stackable
