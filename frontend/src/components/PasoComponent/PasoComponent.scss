@@ -1,0 +1,79 @@
+@import "../../utils/variables_globales.scss";
+
+.pasos {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    border-bottom: 1px solid #D3D1D1;
+    border-radius: 15px;
+    padding: 10px 0 10px 0;
+}
+
+.pasos__circulo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #67257d 25%, #9a3abf 65%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.pasos__circulo-h3 {
+    font-size: 25px;
+    color: #fff;
+}
+
+.pasos__titulo {
+    color: $color-primario;
+    margin: 10px 0 5px 0;
+}
+
+.pasos__descripcion {
+    color: $color-primario;
+    margin: 15px 0 12px 0;
+    text-align: justify;
+    font-size: 18px;
+
+    @media (max-width: 400px) {
+        text-align: justify;
+    }
+}
+
+.pasos__opcional {
+    width: 100px;
+    height: 45px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #67257d 25%, #9a3abf 65%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.pasos-p {
+    color: $color-primario;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+}
+
+.pasos__opcional {
+    width: 100px;
+    height: 45px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #67257d 25%, #9a3abf 65%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    box-sizing: border-box;
+}

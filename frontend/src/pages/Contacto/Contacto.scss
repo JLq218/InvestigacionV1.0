@@ -1,0 +1,48 @@
+@import "../../utils/variables_globales.scss";
+
+.subtituloPage,
+.tituloItem,
+.descripcionItem{
+    text-align: justify;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: $color-primario;
+}
+.subtituloPage{
+    font-size: 28px;
+    margin: 0px;
+
+    @media (max-width: 600px){
+        margin-top: 10px;
+        font-size: 20px;
+    }
+}
+
+.tituloItem{
+    font-size: 28px;
+    margin: 10px 0px;
+
+    @media (max-width: 600px){
+        font-size: 20px;
+        margin: 0px;
+    }
+}
+
+.descripcionItem{
+    font-size: 24px;
+    margin: 0px 0px 24px 0px;
+
+    @media (max-width: 600px){
+        font-size: 18px;
+    }
+}
+
+.contactoMapa{
+    max-width:1312px;
+    max-height: 843px;
+    width: 88%;
+    height: 100%;
+    min-height: 250px;
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+}

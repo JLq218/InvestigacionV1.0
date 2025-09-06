@@ -1,0 +1,42 @@
+@import "../../utils/variables_globales.scss";
+
+.tituloEquipo{
+    font-size: 28px;
+    color: $color-primario !important;
+
+    @media(max-width: 600px){
+        font-size: 22px;
+        margin: 0px;
+    }
+}
+
+.imagenEquipo{
+    width: 80%;
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    @media (max-width: 600px){
+        width: 95%;
+        border-radius: 20px;
+        margin-bottom: 35px;
+    }
+}
+
+.buttonFormatDesarrolladoPor{
+    font-size: 24px !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    color: $color-blanco-puro !important;
+    font-weight: bold !important;
+    background: $color-primario !important;
+    border-radius: 15px !important;
+    
+    &:hover{
+        background: $color-primario-hover !important;
+    }
+    
+    @media (max-width: 600px){
+        font-size: 16px !important;
+        padding: 15px 30px !important;
+        border-radius: 10px !important;
+        margin-bottom: 50px !important;
+    }
+}

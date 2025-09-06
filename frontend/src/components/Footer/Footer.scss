@@ -1,0 +1,30 @@
+@import "../../utils/variables_globales.scss";
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EAE8E9; /* Color de fondo del footer */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    color: $color-primario; /* Color del texto del footer */
+    text-align: center;
+    padding: 5px 5px; /* Espaciado interior del footer */
+    
+    &__noResponsive{
+        @media(max-width: 900px){
+            display: none !important;
+        }
+    }
+
+    &__Responsive{
+        font-size: 12px;
+        @media(min-width: 900px){
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 900px){
+        padding: 0px 0px 5px 0px;
+    }
+  }

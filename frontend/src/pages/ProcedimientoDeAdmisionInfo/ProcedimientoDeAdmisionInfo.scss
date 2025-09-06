@@ -1,0 +1,106 @@
+@import "../../utils/variables_globales.scss";
+
+.blockConten {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    border: $color-primario 3px solid;
+    padding: 20px !important;
+}
+
+$separator-size: 5px;
+$separator-border-color: $color-primario;
+
+@keyframes separator-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.separator--dotter {
+    margin: 40px 0px;
+    border: 0;
+    border-bottom: $separator-size dotted $separator-border-color;
+    width: 100%;
+    // animation: separator-width 1.5s ease-out forwards;
+}
+
+.down-arrow {
+    box-sizing: border-box;
+    height: 20px;
+    width: 20px;
+    border-style: solid;
+    border-color: $color-primario;
+    border-width: 0px 2px 2px 0px;
+    margin: 20px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+    }
+}
+
+.alertaProceso {
+    color: #fff;
+    width: 100%;
+    max-width: 800px;
+    background: $color-primario;
+    padding: 10px;
+    min-height: 60px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alertaProceso--purple{
+    color: #fff;
+    width: 100%;
+    max-width: 800px;
+    background: $color-primario;
+    padding: 10px;
+    min-height: 60px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 40px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedorEtapas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.linkProceso{
+    color:#a09393;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 150ms;
+
+    &:hover{
+        color: #ec1b72;
+    }
+
+    @media (max-width: 400px){
+        font-size: 14px;
+    }
+}
+
+.contenedorNavProcedimiento{
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+}

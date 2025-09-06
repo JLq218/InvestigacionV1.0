@@ -1,0 +1,25 @@
+@import "../../utils/variables_globales.scss";
+
+.iconIntegrante,
+.nombreIntegrante,
+.descripcionIntegrante {
+    color: $color-primario !important;
+}
+
+.iconIntegrante {
+    margin: 0px !important;
+}
+.nombreIntegrante {
+    font-size: 20px;
+    @media(max-width: 600px){
+        font-size: 18px;
+    }
+}
+
+.descripcionIntegrante {
+    font-size: 18px !important;
+
+    @media(max-width: 600px){
+        font-size: 16px !important;
+    }
+}
