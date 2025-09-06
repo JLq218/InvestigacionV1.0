@@ -1,6 +1,7 @@
 {
-  "short_name": "Investigación",
-  "name": "Unidad de Investigación",
+  "short_name": "Investigación Salud",
+  "name": "Unidad de Investigación - Ministerio de Salud de Jujuy",
+  "description": "Promovemos la investigación en salud para mejorar la equidad y calidad de la atención sanitaria en la provincia de Jujuy.",
   "icons": [
     {
       "src": "favicon.ico",
