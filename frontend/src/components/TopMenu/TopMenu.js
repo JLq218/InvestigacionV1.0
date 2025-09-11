@@ -3,7 +3,7 @@ import { Menu, Grid, Dropdown, Popup } from "semantic-ui-react";
 import { Link, useLocation } from "react-router-dom";
 
 import "./TopMenu.scss";
-import logoMinisterio from "../../images/Logo gobierno 2024.png";
+import logoMinisterio from "../../images/Gobierno+ministerioRecurso 13@300x.png";
 import {
   color_primario,
   color_blanco_puro,

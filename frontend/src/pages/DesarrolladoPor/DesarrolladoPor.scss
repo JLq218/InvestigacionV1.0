@@ -17,7 +17,6 @@
     @media (max-width: 600px){
         width: 95%;
         border-radius: 20px;
-        margin-bottom: 35px;
     }
 }
 
@@ -38,5 +37,27 @@
         padding: 15px 30px !important;
         border-radius: 10px !important;
         margin-bottom: 50px !important;
+    }
+}
+
+.image-acit {
+    img {
+        width: 70%;
+        margin: 14px auto;
+        @media (max-width: 600px){
+            width: 100%;
+        }
+    }
+}
+.contenedor-button {
+    text-align: center;
+    margin-top: 28px;
+    width: 100%;
+
+    @media (max-width: 600px){
+        margin-top: 20px;
+        width: 100%;
+        margin-bottom: 35px;
+
     }
 }

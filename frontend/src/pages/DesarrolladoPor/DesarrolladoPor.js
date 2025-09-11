@@ -4,6 +4,7 @@ import { Grid, Dimmer, Loader, Image, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { TableIntegrantes } from "../../components";
 import imagen from "../../images/imagenEquipo (1).png";
+import acit from "../../images/LOGO-GOBIERNO-04-2025.png";
 import { proyectLeader, developers } from "../../data/equipoDesarrollo";
 import "./DesarrolladoPor.scss";
 
@@ -58,12 +59,14 @@ export function DesarrolladoPor() {
               integrantes={developers}
               iconoIntegrantes="keyboard outline"
             />
-
-            <div style={{ textAlign: "center", marginTop: "28px" }}>
-              <Button className="buttonFormat" as={Link} to={"/"}>
-                Volver al Inicio
-              </Button>
-            </div>
+            <h2 className="tituloEquipo">Con la colaboración de:</h2>
+            <Image
+              className="image-acit"
+              centered
+              src={acit}
+              as={Link}
+              to={"https://cienciaytecnologia.jujuy.gob.ar/"}
+            />
           </Grid.Column>
 
           <Grid.Column textAlign="center" verticalAlign="middle">
@@ -73,6 +76,11 @@ export function DesarrolladoPor() {
               src={imagen}
               onLoad={cargaImagen}
             />
+            <div className="contenedor-button">
+              <Button className="buttonFormat" as={Link} to={"/"}>
+                Volver al Inicio
+              </Button>
+            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>
