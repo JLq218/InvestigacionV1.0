@@ -10,13 +10,16 @@ export const developers = [
   {
     nombre: "José Luis Quispe",
     descripcion: "Estudiante avanzado de Ingeniería en Informática",
+    color: "#542141",
   },
   {
     nombre: "Daiana Agustina Maraz",
     descripcion: "Analista Programador Universitario",
+    color: "#7e7e7eff",
   },
   {
     nombre: "Maximiliano Joaquín Carrillo",
     descripcion: "Analista Programador Universitario",
+    color: "#7e7e7eff",
   },
 ];

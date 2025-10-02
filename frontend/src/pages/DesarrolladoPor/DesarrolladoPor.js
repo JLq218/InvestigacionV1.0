@@ -48,17 +48,16 @@ export function DesarrolladoPor() {
 
         <Grid.Row columns={2}>
           <Grid.Column>
-            <h2 className="tituloEquipo">Líder de Proyecto:</h2>
-            <TableIntegrantes
-              integrantes={proyectLeader}
-              iconoIntegrantes="cogs"
-            />
-
             <h2 className="tituloEquipo">Desarrolladores:</h2>
             <TableIntegrantes
               integrantes={developers}
               iconoIntegrantes="keyboard outline"
             />
+            {/* <h2 className="tituloEquipo">Líder de Proyecto:</h2>
+            <TableIntegrantes
+              integrantes={proyectLeader}
+              iconoIntegrantes="cogs"
+            /> */}
             <h2 className="tituloEquipo">Con la colaboración de:</h2>
             <Image
               className="image-acit"

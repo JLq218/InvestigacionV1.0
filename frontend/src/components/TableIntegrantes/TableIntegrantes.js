@@ -23,14 +23,21 @@ export function TableIntegrantes(props) {
                 className="iconIntegrante"
                 name={iconoIntegrantes}
                 size="big"
+                style={{ color: integrante.color }}
               />
             </TableCell>
 
             <TableCell>
               <Header>
-                <HeaderContent className="nombreIntegrante">
+                <HeaderContent
+                  className="nombreIntegrante"
+                  style={{ color: integrante.color }}
+                >
                   {integrante.nombre}
-                  <HeaderSubheader className="descripcionIntegrante">
+                  <HeaderSubheader
+                    className="descripcionIntegrante"
+                    style={{ color: integrante.color }}
+                  >
                     {integrante.descripcion}
                   </HeaderSubheader>
                 </HeaderContent>
