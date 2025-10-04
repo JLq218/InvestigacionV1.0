@@ -6,5 +6,6 @@ const InstitucionCtrl = require("../controllers/InstitucionController.js");
 
 // definiendo rutas
 router.get("/buscarInstitucion", InstitucionCtrl.buscarInstitucion);
+router.post("/createInstitucion", InstitucionCtrl.createInstitucion);
 
 module.exports = router;

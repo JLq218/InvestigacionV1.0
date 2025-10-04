@@ -16,14 +16,37 @@ InstitucionCtrl.buscarInstitucion = async (req, res) => {
     console.log(institucion);
 
     res.status(200).json({
-      institucion: institucion ? {cuit: institucion?.cuit || null,
-      nombre: institucion?.nombre || null,} : null,
+      institucion: institucion
+        ? {
+            cuit: institucion?.cuit || null,
+            nombre: institucion?.nombre || null,
+          }
+        : null,
     });
   } catch (error) {
     console.log("holaaaaaaaaaaaaaaa", error);
 
     res.status(500).send({
       message: "OCURRIO UN PROBLEMA BUSCAR INSTITUCION",
+    });
+  }
+};
+
+InstitucionCtrl.createInstitucion = async (req, res) => {
+  let InstitucionC = new Institucion(req.body);
+
+  // console.log(req.body);
+
+  try {
+    await InstitucionC.save();
+    res.json({
+      status: "1",
+      msg: "Institucion guardada.",
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "0",
+      msg: "Error procesando operacion.",
     });
   }
 };
