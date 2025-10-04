@@ -24,7 +24,7 @@ export function Inicio() {
       <Dimmer active={!imagenCargada} inverted>
         <Loader size="big">Espere un momento</Loader>
       </Dimmer>
-      <ModalAnuncios />
+      {/* <ModalAnuncios /> */}
       <Grid
         className="gridInicio"
         stackable
