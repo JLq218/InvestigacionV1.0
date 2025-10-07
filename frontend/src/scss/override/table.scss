@@ -1,0 +1,10 @@
+@use "../variables_globales.scss" as vars;
+
+.ui.table{
+    font-family: 'Montserrat', sans-serif !important;
+    th{
+        font-weight: 600 !important;
+        color: vars.$color-primario !important;
+    }
+
+}
