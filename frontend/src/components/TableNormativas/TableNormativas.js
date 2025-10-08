@@ -13,18 +13,12 @@ import {
 import "./TableNormativas.scss";
 
 export function TableNormativas(props) {
-  const { normativas, tituloHeaderCell1, tituloHeaderCell2 } = props;
+  const { normativas, tituloHeaderCell } = props;
   return (
-    <Table celled collapsing style={{ margin: "0px", width: "100%" }}>
+    <Table celled striped unstackable className="tableNormativas">
       <TableHeader>
         <TableRow>
-          <TableHeaderCell className="tableHeaderCellFormat">
-            {tituloHeaderCell1}
-          </TableHeaderCell>
-
-          <TableHeaderCell width={1} className="tableHeaderCellFormat">
-            {tituloHeaderCell2}
-          </TableHeaderCell>
+          <TableHeaderCell colSpan="2">{tituloHeaderCell}</TableHeaderCell>
         </TableRow>
       </TableHeader>
 
@@ -32,11 +26,12 @@ export function TableNormativas(props) {
         {normativas.map((normativa, index) => (
           <TableRow key={index}>
             <TableCell>
-              <p className="tituloNormativa">{normativa.nombre}</p>
+              <p className="tableCellFormat">{normativa.nombre}</p>
             </TableCell>
-
             <TableCell textAlign="center">
               <Popup
+                content="Ver documento"
+                position="left center"
                 trigger={
                   <a
                     href={normativa.enlace}
@@ -44,15 +39,12 @@ export function TableNormativas(props) {
                     rel="noopener noreferrer"
                   >
                     <Icon
-                      link
                       name="file alternate outline"
-                      size="big"
+                      size="large"
                       className="iconFormat"
                     />
                   </a>
                 }
-                content="Ir al documento"
-                position="left center"
               />
             </TableCell>
           </TableRow>

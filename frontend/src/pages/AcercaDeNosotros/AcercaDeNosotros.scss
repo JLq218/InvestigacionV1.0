@@ -1,69 +1,27 @@
-@import "../../utils/variables_globales.scss";
+@use "../../scss/variables_globales.scss" as vars;
 
-.gridPage{
-    padding: 14px !important;
-    margin: -14px 0px 0px 0px !important;
-    
-    @media (max-width: 600px){
-        padding: 14px 0px 14px 0px !important;
-    }
-}
-
-.tituloPage{
-    font-size: 32px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    color: $color-primario;
-    
-    @media (max-width: 600px){
-        margin: 0px 0px 10px 0px !important;
-        font-size: 24px;
-        text-align: center;
-    }
-}
-
-.descripcionPage{
-    font-size: 24px;
-    text-align: justify;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    color: $color-primario;
-    margin-bottom: 10px;
-    @media (max-width: 600px){
-        font-size: 18px;
-        // text-align: center;
-    }
-}
-
-.hr-acercade{
-    border-top: 2px dashed $color-primario;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 600px){
-    .tituloPrincipal{
-        font-size: 30px;
-    }
-
-    .subtituloAcercaDe{
-        font-size: 20px;
-    }
-
-    .descripcion{
-        font-size: 18px;
-    }
-
-    .tituloSecundario{
-        font-size: 22px;
+.acercade-page {
+    margin: 20px 10px 50px 10px;
+    max-width: 1300px;
+    background: vars.$color-blanco-puro;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    height: auto;             /* que crezca solo con su contenido */
+    min-height: 0;            /* importante si el padre es flexbox */
+    align-self: flex-start;   /* evita que sea centrado/estirado por padre flex */
+      
+    @media (max-width: 768px){
+        margin: 15px 10px 55px;
+        padding: 20px 10px 10px 10px;
+        // max-width: calc(100% - 20px);
     }
 }
 
 .contenedor-cartas{
-    max-width: 1100px;
-    display:flex;
-    gap:30px;
-
-    @media (max-width: 900px) {
-        flex-direction: column;
-        margin-bottom: 40px;
-    }
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center;
 }

@@ -1,25 +1,20 @@
-@import "../../utils/variables_globales.scss";
+@use "../../scss/variables_globales.scss" as vars;
 
-.tableHeaderCellFormat,
-.tituloNormativa,
-.iconFormat{
-    color: $color-primario !important;
+.tableNormativas {
+  width: 100%;
+  border-radius: 10px !important;
 
-}
+  thead th {
+    border-radius: 10px 10px 0px 0px!important;
+  }
 
-.tableHeaderCellFormat{
-    font-size: 20px;
+  .iconFormat {
+    color: vars.$color-violeta-75;
+    transition: all 0.2s ease-in-out;
+  }
 
-    @media (max-width: 600px) {
-        text-align: center !important;
-    }
-}
-
-.tituloNormativa{
-    font-size: 17px;
-    
-    @media (max-width: 600px) {
-        font-weight: 100;
-        text-align: center;
-    }
+  .iconFormat:hover {
+    color: vars.$color-primario;
+    transform: scale(1.1);
+  }
 }

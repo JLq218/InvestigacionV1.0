@@ -2,9 +2,20 @@
 
 .ui.table{
     font-family: 'Montserrat', sans-serif !important;
+
     th{
+        font-size: 1.3rem;
         font-weight: 600 !important;
         color: vars.$color-primario !important;
+        @media (max-width: 768px){
+            font-size: 1.1rem;
+        }
+    }
+    td{
+        color: vars.$color-primario !important;
+        @media (max-width: 768px){
+            font-size: 0.9rem;
+        }
     }
 
 }

@@ -1,43 +1,56 @@
-import React, { useEffect } from "react";
-import { Grid } from "semantic-ui-react";
-
-import { TableNormativas } from "../../components";
+import React, { useEffect, useState } from "react";
+import { Transition } from "semantic-ui-react";
 
 import {
   normativasArgentina,
   normativasInternacionales,
 } from "../../data/normativas";
 
+import { TableNormativas } from "../../components";
+
 import "./Normativas.scss";
 
 export function Normativas() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    scrollToTop();
+    window.scrollTo({ top: 0 });
+    setVisible(true);
   }, []);
 
   return (
-    <Grid stackable className="gridPage">
-      <Grid.Column>
-        <h2 className="tituloPage">NORMATIVAS DE INVESTIGACIÓN</h2>
-        <TableNormativas
-          normativas={normativasArgentina}
-          tituloHeaderCell1={"NORMATIVAS APLICABLE EN ARGENTINA"}
-          tituloHeaderCell2={"DOCUMENTO"}
-        />
-        <div style={{ margin: "30px 0px" }}>
+    <div className="normativas-page">
+      <Transition animation="scale" duration={800} visible={visible}>
+        <div>
+          <h2 className="tituloPage">📚 NORMATIVAS DE INVESTIGACIÓN</h2>
+          <p className="descripcionPage">
+            A continuación se presenta un conjunto de normativas que constituyen
+            la base para el proceso de evaluación de los
+            <b> Protocolos de Investigación</b>. Estas disposiciones sirven como
+            marco de referencia para garantizar que los proyectos presentados en
+            la Unidad de Investigación cumplan con los criterios{" "}
+            <b>éticos, metodológicos y legales</b> establecidos.
+          </p>
+        </div>
+      </Transition>
+
+      <Transition animation="scale" duration={800} visible={visible}>
+        <div className="tabla-container">
           <TableNormativas
-            normativas={normativasInternacionales}
-            tituloHeaderCell1={"PAUTAS ETICAS E INSTRUMENTOS INTERNACIONALES"}
-            tituloHeaderCell2={"DOCUMENTO"}
+            normativas={normativasArgentina}
+            tituloHeaderCell="NORMATIVAS APLICABLES EN ARGENTINA"
           />
         </div>
-      </Grid.Column>
-    </Grid>
+      </Transition>
+
+      <Transition animation="scale" duration={800} visible={visible}>
+        <div className="tabla-container">
+          <TableNormativas
+            normativas={normativasInternacionales}
+            tituloHeaderCell="PAUTAS ÉTICAS E INSTRUMENTOS INTERNACIONALES"
+          />
+        </div>
+      </Transition>
+    </div>
   );
 }

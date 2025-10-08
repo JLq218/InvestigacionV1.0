@@ -16,6 +16,8 @@
     }
     
     &__main-content{
+        display: flex;
+        justify-content: center;
         grid-area: content;
     }
 }
