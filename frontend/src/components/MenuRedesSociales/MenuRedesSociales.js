@@ -15,7 +15,7 @@ export function MenuRedesSociales() {
             as={Link}
             to={enlace.enlace}
             target="_blank"
-            style={{ margin: "0px", padding: "10px" }}
+            style={{ margin: "0px 5px", padding: "5px" }}
           >
             <Icon
               className="iconRedesFormat"

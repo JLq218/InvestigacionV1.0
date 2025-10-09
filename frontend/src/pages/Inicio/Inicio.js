@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button, Grid, Dimmer, Loader, Transition } from "semantic-ui-react";
+import {
+  Button,
+  Grid,
+  Dimmer,
+  Loader,
+  Transition,
+  Icon,
+} from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 // import { ModalAnuncios } from "../../components";
@@ -8,23 +15,16 @@ import imagen from "../../images/imagenHome.png";
 
 export function Inicio() {
   const [imagenCargada, setImagenCargada] = useState(false);
-  const [activado, setActivado] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setActivado((a) => !a);
-    scrollToTop();
+    window.scrollTo({ top: 0 });
+    setVisible(true);
   }, []);
 
   const cargaImagen = () => {
     setImagenCargada(true);
   };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
-  scrollToTop();
 
   return (
     <>
@@ -42,7 +42,7 @@ export function Inicio() {
           display: imagenCargada ? "flex" : "none",
         }}
       >
-        <Transition animation="fade up" duration={2000} visible={activado}>
+        <Transition animation="fade up" duration={2000} visible={visible}>
           <Grid.Column>
             <p className="tituloGrande">UNIDAD DE INVESTIGACIÓN</p>
             <p className="tituloMediano">
@@ -52,18 +52,19 @@ export function Inicio() {
             </p>
             <p className="tituloPequenio">
               Para solicitar la admisión administrativa de su Protocolo de
-              Investigación haga clic en el siguiente botón
+              Investigación haga clic en el siguiente botón:
             </p>
             <Button
               className="buttonFormat"
               as={Link}
               to={"/procedimientoInicio"}
             >
+              <Icon name="file alternate outline" />
               Solicitar la admisión
             </Button>
           </Grid.Column>
         </Transition>
-        <Transition animation="fade down" duration={2000} visible={activado}>
+        <Transition animation="fade down" duration={2000} visible={visible}>
           <Grid.Column style={{ padding: "0px" }}>
             <img
               alt=""

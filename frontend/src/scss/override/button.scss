@@ -15,3 +15,59 @@
       background: vars.$color-primario;
     }
 }
+
+.buttonFormat{
+  &.ui.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: vars.$color-blanco-puro;
+    background: vars.$color-primario;
+    border-radius: 7px;
+    
+    &:hover{
+        background: vars.$color-primario-hover;
+    }
+    &:focus{
+      background: vars.$color-primario;
+    }
+    
+    @media (max-width: 768px){
+        font-size: 1.15rem;
+    }
+  }
+    @media (max-width: 768px){
+    &.ui.labeled.icon.button, .ui.labeled.icon.buttons {
+      padding: 10px 40px 10px 10px!important;
+    }
+  }
+}
+
+.buttonFormatInverted{
+    &.ui.button {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: vars.$color-primario;
+      border-radius: 7px;
+      background: rgb(255, 255, 255, 0) !important;
+      box-shadow:0px 0px 0px 4px vars.$color-primario inset !important;
+      
+      &:hover{
+          background: vars.$color-primario !important;
+          color: rgba(256, 256, 256, 1)
+      }
+      &:focus{
+        background: vars.$color-primario;
+      }
+      
+      @media (max-width: 768px){
+          font-size: 1.15rem;
+      }
+  }
+  @media (max-width: 768px){
+    &.ui.labeled.icon.button, .ui.labeled.icon.buttons {
+      padding: 10px 10px 10px 40px!important;
+    }
+  }
+}

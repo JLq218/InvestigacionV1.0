@@ -18,7 +18,7 @@ export function AcercaDeNosotros() {
   return (
     <div className="acercade-page">
       <Grid.Column>
-        <Transition animation="fade down" duration={1000} visible={visible}>
+        <Transition animation="fade down" duration={800} visible={visible}>
           <div>
             <h2 className="tituloPage">ACERCA DE LA UNIDAD DE INVESTIGACIÓN</h2>
             <p className="descripcionPage" style={{ marginBottom: "20px" }}>
@@ -29,7 +29,7 @@ export function AcercaDeNosotros() {
             </p>
           </div>
         </Transition>
-        <Transition animation="fade down" duration={1000} visible={visible}>
+        <Transition animation="fade down" duration={800} visible={visible}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="contenedor-cartas">
               <CardAbout

@@ -28,7 +28,7 @@ export function Normativas() {
             la base para el proceso de evaluación de los
             <b> Protocolos de Investigación</b>. Estas disposiciones sirven como
             marco de referencia para garantizar que los proyectos presentados en
-            la Unidad de Investigación cumplan con los criterios{" "}
+            la <b>Unidad de Investigación</b> cumplan con los criterios{" "}
             <b>éticos, metodológicos y legales</b> establecidos.
           </p>
         </div>

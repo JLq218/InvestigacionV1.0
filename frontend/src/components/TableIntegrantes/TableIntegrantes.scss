@@ -11,7 +11,7 @@
 }
 .nombreIntegrante {
     font-size: 20px;
-    @media(max-width: 600px){
+    @media(max-width: 768px){
         font-size: 18px;
     }
 }
@@ -19,7 +19,7 @@
 .descripcionIntegrante {
     font-size: 18px !important;
 
-    @media(max-width: 600px){
+    @media(max-width: 768px){
         font-size: 16px !important;
     }
 }

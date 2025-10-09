@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import "./Requisitos.scss";
 import {
   Grid,
-  HeaderSubheader,
-  HeaderContent,
   TableRow,
   TableHeaderCell,
   TableHeader,
   TableCell,
   TableBody,
-  Header,
+  Icon,
   Table,
   Checkbox,
   Button,
@@ -19,14 +17,8 @@ import {
 import { requisitos } from "../../data/requisitosProceso";
 
 export function Requisitos() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
   useEffect(() => {
-    // Esta función se ejecutará solo una vez
-    scrollToTop();
+    window.scrollTo({ top: 0 });
   }, []);
 
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
@@ -58,40 +50,35 @@ export function Requisitos() {
   };
 
   return (
-    <Grid stackable className="gridPage">
+    // <Grid stackable className="gridPage">
+    <div className="acercade-page">
       <Grid.Column>
         <h2 className="tituloPage">
-          VERIFICACIÓN DE LOS DATOS Y DOCUMENTOS REQUERIDOS
+          📝 VERIFICACIÓN DE LOS DATOS Y DOCUMENTACIÓN REQUERIDA
         </h2>
         <p className="descripcionPage">
-          Para facilitar y agilizar el proceso de admisión, hemos preparado un
-          listado completo de los datos y documentos necesarios. Le pedimos que
-          marque con una tilde aquellos elementos que ya posea. Es importante
-          destacar que una vez marcados todos los requisitos en la lista, se
-          habilitará el botón para iniciar el procedimiento. Esta medida se
-          implementa con el objetivo de garantizar que la carga de los
-          formularios se realice sin contratiempos y en un solo paso.
+          Para <b>facilitar y agilizar el proceso de admisión</b>, hemos
+          preparado un listado completo con los{" "}
+          <b>datos y documentación requerida</b>. Le pedimos que{" "}
+          <b>marque con una tilde aquellos elementos que ya posea</b>. Es
+          importante destacar que una vez <b>marcados todos los requisitos</b>{" "}
+          en la lista, se{" "}
+          <b>habilitará el botón para iniciar el procedimiento</b>. Esta medida
+          se implementa con el objetivo de garantizar que la carga de los
+          formularios se realice <b>sin contratiempos y en un solo paso</b>.
           Agradecemos de antemano su colaboración.
         </p>
-        <Table celled collapsing style={{ width: "100%" }}>
+        <Table
+          celled
+          collapsing
+          unstackable
+          className="tableNormativas"
+          style={{ marginTop: "25px" }}
+        >
           <TableHeader>
             <TableRow>
-              <TableHeaderCell
-                style={{
-                  color: "#542141",
-                  fontSize: "20px",
-                }}
-              >
-                DATOS Y DOCUMENTOS
-              </TableHeaderCell>
-              <TableHeaderCell
-                textAlign="center"
-                width={2}
-                style={{
-                  color: "#542141",
-                  fontSize: "20px",
-                }}
-              >
+              <TableHeaderCell>DATOS Y DOCUMENTOS</TableHeaderCell>
+              <TableHeaderCell textAlign="center" width={1}>
                 <Checkbox checked={isChecked} onChange={handleCheckAll} />
               </TableHeaderCell>
             </TableRow>
@@ -100,27 +87,26 @@ export function Requisitos() {
             {requisitos.map((requisito, index) => (
               <TableRow key={index}>
                 <TableCell>
-                  <Header as="h3">
-                    <HeaderContent
-                      style={{ color: "#542141", fontSize: "17px" }}
-                    >
-                      {requisito.titulo}
-                    </HeaderContent>
-                    <HeaderSubheader
-                      style={{ color: "#542141", fontSize: "16px" }}
-                    >
-                      {requisito.descripcion}
-                      {requisito.enlace && (
-                        <a
-                          href={requisito.enlace}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Click para descargar el modelo
-                        </a>
-                      )}
-                    </HeaderSubheader>
-                  </Header>
+                  <p
+                    style={{
+                      fontWeight: "600",
+                      marginBottom: "0px",
+                    }}
+                  >
+                    {requisito.titulo}
+                  </p>
+                  <p>
+                    {requisito.descripcion}
+                    {requisito.enlace && (
+                      <a
+                        href={requisito.enlace}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Click para descargar el modelo
+                      </a>
+                    )}
+                  </p>
                 </TableCell>
                 <TableCell textAlign="center">
                   <Checkbox
@@ -134,18 +120,22 @@ export function Requisitos() {
             ))}
           </TableBody>
         </Table>
-
         <Button
           disabled={requisitos.length !== selectedCheckboxes.length}
           className="buttonFormat"
           as={Link}
           to={"/procedimientoProceso"}
-          style={{ margin: "0px 0px 40px 0px" }}
-          floated="right"
+          icon
+          labelPosition="right"
+          style={{
+            width: "100%",
+          }}
         >
           Iniciar Procedimiento de Admisión
+          <Icon name="arrow alternate circle right" />
         </Button>
       </Grid.Column>
-    </Grid>
+      {/* </Grid> */}
+    </div>
   );
 }
