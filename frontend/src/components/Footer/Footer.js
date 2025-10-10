@@ -3,7 +3,7 @@ import "./Footer.scss";
 
 export function Footer() {
   const unidad = "Unidad de Investigación de Jujuy";
-  const desarrollo = "Equipo de desarrollo web";
+  const desarrollo = "Equipo de desarrollo";
 
   return (
     <div className="footer">

@@ -22,11 +22,7 @@ export function Contacto() {
         <Loader size="big">Espere un momento</Loader>
       </Dimmer>
 
-      <Grid
-        stackable
-        className="gridPage"
-        style={{ display: mapaCargado ? "flex" : "none" }}
-      >
+      <Grid stackable style={{ display: mapaCargado ? "flex" : "none" }}>
         <Grid.Row>
           <Transition animation="fade up" duration={800} visible={visible}>
             <Grid.Column>

@@ -1,88 +1,76 @@
 import React, { useState, useEffect } from "react";
-
-import { Grid, Dimmer, Loader, Image, Button } from "semantic-ui-react";
+import { Image, Icon, Button, Transition } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { TableIntegrantes } from "../../components";
-import imagen from "../../images/imagenEquipo (1).png";
-import acit from "../../images/LOGO-GOBIERNO-04-2025.png";
-import { proyectLeader, developers } from "../../data/equipoDesarrollo";
+import acit from "../../images/logo-gob-05-25.png";
+import { developers } from "../../data/equipoDesarrollo";
 import "./DesarrolladoPor.scss";
 
 export function DesarrolladoPor() {
-  const [imagenCargada, setImagenCargada] = useState(false);
-
-  const cargaImagen = () => {
-    setImagenCargada(true);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    scrollToTop();
+    window.scrollTo({ top: 0 });
+    setVisible(true);
   }, []);
 
   return (
-    <>
-      <Dimmer active={!imagenCargada} inverted>
-        <Loader>Espere un momento</Loader>
-      </Dimmer>
+    <div className="acercade-page">
+      <Transition animation="fade down" duration={800} visible={visible}>
+        <div>
+          <h2 className="tituloPage">🏗️ EQUIPO DE DESARROLLO</h2>
+          <p className="descripcionPage">
+            Esta <b>plataforma web</b> es el resultado del{" "}
+            <b>trabajo colaborativo</b> entre{" "}
+            <b>profesionales en informática</b>,{" "}
+            <b>profesionales de la salud</b>,{" "}
+            <b>especialistas de diversas disciplinas</b> y la{" "}
+            <b>Agencia de Ciencia, Tecnología e Innovación</b>. Cada integrante
+            aportó su <b>tiempo, conocimiento y experiencia</b> para construir
+            una plataforma moderna, accesible y orientada a{" "}
+            <b>impulsar el desarrollo de la investigación en salud</b>.
+          </p>
+        </div>
+      </Transition>
+      <Transition animation="fade up" duration={800} visible={visible}>
+        <div className="devpage-content-center">
+          <h3 className="devpage-collab-title">🖥️ EQUIPO DE DESARROLLO WEB</h3>
 
-      <Grid
-        className="gridPage"
-        stackable
-        style={{
-          display: imagenCargada ? "flex" : "none",
-        }}
-      >
-        <Grid.Row>
-          <Grid.Column>
-            <h2 className="tituloPage">
-              INTEGRANTES DEL EQUIPO DE DESARROLLO WEB
-            </h2>
-          </Grid.Column>
-        </Grid.Row>
+          <div className="devpage-developers-list">
+            {developers.map((dev, index) => (
+              <div
+                key={index}
+                className="devpage-developer-card"
+                style={{
+                  borderLeft: `8px solid ${dev.color}`,
+                }}
+              >
+                <h4>{dev.nombre}</h4>
+                <p>{dev.descripcion}</p>
+              </div>
+            ))}
+          </div>
 
-        <Grid.Row columns={2}>
-          <Grid.Column>
-            <h2 className="tituloEquipo">Desarrolladores:</h2>
-            <TableIntegrantes
-              integrantes={developers}
-              iconoIntegrantes="keyboard outline"
-            />
-            {/* <h2 className="tituloEquipo">Líder de Proyecto:</h2>
-            <TableIntegrantes
-              integrantes={proyectLeader}
-              iconoIntegrantes="cogs"
-            /> */}
-            <h2 className="tituloEquipo">Con la colaboración de:</h2>
+          <h3 className="devpage-collab-title">📚 CON LA COLABORACÓN DE</h3>
+          <a
+            href="https://cienciaytecnologia.jujuy.gob.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
-              className="image-acit"
+              className="devpage-collab-img"
               centered
               src={acit}
-              as={Link}
-              to={"https://cienciaytecnologia.jujuy.gob.ar/"}
+              alt="Agencia de Ciencia y Tecnología"
             />
-          </Grid.Column>
-
-          <Grid.Column textAlign="center" verticalAlign="middle">
-            <Image
-              className="imagenEquipo"
-              centered
-              src={imagen}
-              onLoad={cargaImagen}
-            />
-            <div className="contenedor-button">
-              <Button className="buttonFormat" as={Link} to={"/"}>
-                Volver al Inicio
-              </Button>
-            </div>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </>
+          </a>
+          <div className="devpage-button-container">
+            <Button primary as={Link} to="/">
+              <Icon name="home" />
+              Volver al inicio
+            </Button>
+          </div>
+        </div>
+      </Transition>
+    </div>
   );
 }
