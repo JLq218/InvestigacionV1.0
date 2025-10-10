@@ -1,7 +1,8 @@
 @use "../variables_globales.scss" as vars;
 
 .tituloPage,
-.descripcionPage {
+.descripcionPage,
+.descripcionProceso {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     color: vars.$color-primario;
@@ -19,6 +20,17 @@
 .descripcionPage{
     margin-top: 20px;
     font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    @media (max-width: 768px){
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+}
+
+.descripcionProceso{
+    margin-top: 10px;
+    font-weight: 500;
     font-size: 1.2rem;
     line-height: 1.7;
     @media (max-width: 768px){

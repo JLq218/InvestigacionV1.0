@@ -1,8 +1,15 @@
-import React from "react";
-import { Grid, Button } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import { Grid, Button, Icon, Transition } from "semantic-ui-react";
 import { enlace_formulario_protocolo } from "../../data/enlacesFormulariosGoogle";
 
 export function ProcesoDeAdmisionPaso03() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    setVisible(true);
+  }, []);
+
   const abrirEnNuevaVentana1 = () => {
     window.open(
       // "https://docs.google.com/forms/d/e/1FAIpQLSeYIkdBFjuFKDkS7WvLjq-IHi_6ZSYGmBB017ByqSCmyPicdA/viewform",
@@ -12,64 +19,46 @@ export function ProcesoDeAdmisionPaso03() {
     );
   };
 
-  // const abrirEnNuevaVentana2 = () => {
-  //   window.open(
-  //     "https://docs.google.com/forms/d/e/1FAIpQLSd4z0v-_Fv26Gsl-Wy0-10aN-J4R9WEvvPgSVJFXAONVIV9yQ/viewform",
-  //     "_blank",
-  //     "toolbar=yes,scrollbars=yes,resizable=yes"
-  //   );
-  // };
-
   return (
-    <Grid className="gridPage" stackable>
-      <Grid.Row>
+    <>
+      <div className="acercade-page">
         <Grid.Column>
-          <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
+          <Transition animation="fade down" duration={800} visible={visible}>
+            <div>
+              <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
+              <p className="descripcionPage" style={{ marginBottom: "20px" }}>
+                <b>PASO 3:</b> Corresponde al <b>último paso</b> del
+                procedimiento de admisión.
+                <br />
+                En esta etapa deberá incorporar toda la <b>
+                  documentación
+                </b> y <b> datos requeridos</b> del{" "}
+                <b> Protocolo de Investigación</b>.
+              </p>
+              <div className="alerta">
+                ⚠️ Por favor, evite salir de esta página hasta finalizar el
+                procedimiento de admisión ⚠️
+              </div>
+            </div>
+          </Transition>
 
-          <p className="descripcionPage">
-            <b>PASO 3:</b> Complete el siguiente formulario:
-          </p>
-
-          <h2 className="descripcionPage" style={{ marginTop: "0px" }}>
-            Por favor evite salir de esta página hasta finalizar el
-            procedimiento de admisión
-          </h2>
+          <Transition animation="fade left" duration={800} visible={visible}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="contenedor-cartas">
+                <Button
+                  className="buttonFormatRegister"
+                  icon
+                  labelPosition="left"
+                  onClick={abrirEnNuevaVentana1}
+                >
+                  Llenar Formulario de Registro del Protocolo de Investigación
+                  <Icon name="file outline" />
+                </Button>
+              </div>
+            </div>
+          </Transition>
         </Grid.Column>
-      </Grid.Row>
-
-      <Grid.Row textAlign="center">
-        <Grid.Column>
-          <Button
-            className="buttonFormat"
-            // as={Link}
-            // to="https://docs.google.com/forms/d/e/1FAIpQLSeYIkdBFjuFKDkS7WvLjq-IHi_6ZSYGmBB017ByqSCmyPicdA/viewform"
-            // target="_blank"
-            onClick={abrirEnNuevaVentana1}
-          >
-            Llenar Formulario de Registro de Protocolo de Investigación
-          </Button>
-        </Grid.Column>
-      </Grid.Row>
-
-      {/* <Grid.Row>
-        <p className="descripcion">
-          <b>PASO 4:</b> ¿En el protocolo de investigación hay más
-          investigadores involucrados? En caso afirmativo, deberá registrar uno
-          por uno en el siguiente enlace.
-        </p>
-      </Grid.Row>
-
-      <Grid.Row centered>
-        <Button
-          className="buttonFormat"
-          // as={Link}
-          // to="https://docs.google.com/forms/d/e/1FAIpQLSd4z0v-_Fv26Gsl-Wy0-10aN-J4R9WEvvPgSVJFXAONVIV9yQ/viewform"
-          // target="_blank"
-          onClick={abrirEnNuevaVentana2}
-        >
-          Llenar Formulario de Investigadores
-        </Button>
-      </Grid.Row> */}
-    </Grid>
+      </div>
+    </>
   );
 }

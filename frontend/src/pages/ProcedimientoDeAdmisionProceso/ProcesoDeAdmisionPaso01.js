@@ -1,14 +1,27 @@
-import React from "react";
-import { Grid, Button, Input, Icon, Dimmer, Loader } from "semantic-ui-react";
+import React, { useEffect, useState } from "react";
+import {
+  Grid,
+  Button,
+  Input,
+  Icon,
+  Dimmer,
+  Loader,
+  Transition,
+} from "semantic-ui-react";
 // import { Link } from "react-router-dom";
 import "./ProcedimientoDeAdmisionProceso.scss";
-import { useState } from "react";
 import { toast } from "react-toastify";
 import { BASE_API } from "../../utils/constants";
 import { enlace_formulario_institucion } from "../../data/enlacesFormulariosGoogle";
 
 export function ProcesoDeAdmisionPaso01(props) {
   const { onPaso2 } = props;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    setVisible(true);
+  }, []);
 
   //intitucion / centro de investigacion
   const [loader, setLoader] = useState(false);
@@ -85,110 +98,112 @@ export function ProcesoDeAdmisionPaso01(props) {
           <Loader size="big">Espere un momento...</Loader>
         </Dimmer>
       )}
-      <Grid className="gridPage" stackable>
-        <Grid.Row>
-          <Grid.Column>
-            <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
+      <div className="acercade-page">
+        <Grid.Column>
+          <Transition animation="fade down" duration={800} visible={visible}>
+            <div>
+              <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
+              <p className="descripcionPage" style={{ marginBottom: "20px" }}>
+                <b>PASO 1:</b> Verifique si se encuentra registrada la{" "}
+                <b>
+                  Institución de Afiliación del/la Investigador/a Principal.
+                </b>
+                <br />
+                La búsqueda debe realizarse a través del{" "}
+                <b>CUIT de la institución</b>, el cual debe{" "}
+                <b>incluir los guiones</b>.
+                <br />
+                <i>
+                  Ejemplo: <b>30-70966892-3</b> (Ministerio de Salud de Jujuy)
+                </i>
+                .
+              </p>
+              <div className="alerta">
+                ⚠️ Por favor, evite salir de esta página hasta finalizar el
+                procedimiento de admisión ⚠️
+              </div>
+            </div>
+          </Transition>
 
-            <p className="descripcionPage">
-              <b>PASO 1:</b> Verifique si se encuentra registrada la institución
-              de afiliación del/la Investigador/a Principal. La búsqueda debe
-              realizarse a través del CUIT de la institución. El CUIT debe
-              incluir los guiones, ej. 30-70966892-3, CUIT del Ministerio de
-              Salud de Jujuy.
+          <Transition animation="fade left" duration={800} visible={visible}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="contenedor-cartas">
+                <Input
+                  icon="search"
+                  placeholder="Ingrese el CUIT de la Institución"
+                  value={cuit}
+                  onChange={handleInstitucionChange}
+                  onKeyUp={(event) => {
+                    if (event.key === "Enter" && isCuitValid) {
+                      buscarInstitucion();
+                    }
+                  }}
+                  style={{ minWidth: "320px" }}
+                />
+
+                <Button
+                  primary
+                  onClick={buscarInstitucion}
+                  disabled={!isCuitValid}
+                >
+                  Buscar
+                </Button>
+              </div>
+            </div>
+          </Transition>
+
+          {mensajeCuit && (
+            <p className="mensajeValido">
+              🚨 Ingrese un CUIT válido (con guiones) 🚨
             </p>
+          )}
 
-            <h2 className="descripcionPage" style={{ marginTop: "0px" }}>
-              Por favor evite salir de esta página hasta finalizar el
-              procedimiento de admisión
-            </h2>
-          </Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row columns={2} verticalAlign="middle">
-          <Grid.Column width={14} style={{ padding: "0px 14px" }}>
-            <Input
-              icon
-              placeholder="CUIT de la Institución de afiliación"
-              style={{
-                width: "100%",
-              }}
-            >
-              <input
-                className="inputProcesoDeAdmision"
-                value={cuit}
-                onChange={handleInstitucionChange}
-                onKeyUp={(event) => {
-                  if (event.key === "Enter" && isCuitValid) {
-                    // incrementar();
-                    buscarInstitucion();
-                  }
-                }}
-              />
-              <Icon className="iconBuscar" name="search" />
-            </Input>
-          </Grid.Column>
-
-          <Grid.Column
-            width={2}
-            textAlign="center"
-            style={{ padding: "0px 0px 0px 14px" }}
-          >
-            {/* <Button className="buttonFormat" onClick={incrementar}> */}
-            <Button
-              className="buttonFormat"
-              onClick={buscarInstitucion}
-              disabled={!isCuitValid}
-            >
-              Buscar
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-        {mensajeCuit && (
-          <p className="mensajeValido">Ingrese un CUIT válido.</p>
-        )}
-        <Grid.Row centered>
-          {/* {contador >= 3 ? ( */}
           {institucion ? (
-            <Grid.Column textAlign="center">
+            <div className="resultado-exito">
               <h2 className="mensajeEncontrado">
-                La institución ya está registrada puede proceder al paso 2
-                haciendo click en el siguiente botón
+                ✅ La Institución de Afiliacion está registrada.
               </h2>
-
+              <p className="descripcionProceso">
+                Ahora puedes proceder al paso 2 haciendo clic en el siguiente
+                botón:
+              </p>
               <Button
-                className="buttonFormat"
+                className="buttonFormatGreen"
                 onClick={onPaso2}
-                style={{ marginBottom: "30px" }}
+                icon
+                labelPosition="right"
               >
                 Siguiente paso
+                <Icon name="arrow alternate circle right" />
               </Button>
-            </Grid.Column>
+            </div>
           ) : (
             <>
               {bandera && (
-                <Grid.Column textAlign="center">
+                <div className="resultado-error">
                   <h2 className="mensajeNoEncontrado">
-                    Al parecer la institución de afiliación no esta registrada,
-                    por lo tanto, lo debe registrar en el siguiente botón
+                    ⛔ La Institución de Afiliacion NO está registrada.
                   </h2>
+                  <p className="descripcionProceso">
+                    Por lo tanto, debe registrarla haciendo clic en el siguiente
+                    botón:
+                  </p>
 
                   <Button
-                    className="buttonFormat"
-                    // as={Link}
-                    // to="https://docs.google.com/forms/d/e/1FAIpQLSdm11hdI2kEqsRITePEczqpeqj3QnB5fnrNZVTJ5Pnwig3kbw/viewform"
-                    // target="_blank"
+                    className="buttonFormatRegister"
+                    icon
+                    labelPosition="left"
                     onClick={abrirEnNuevaVentana}
-                    style={{ marginBottom: "30px" }}
                   >
                     Registrar Nueva Institución de Afiliación
+                    <Icon name="edit outline" />
                   </Button>
-                </Grid.Column>
+                </div>
               )}
             </>
           )}
-        </Grid.Row>
-      </Grid>
+        </Grid.Column>
+      </div>
     </>
   );
 }

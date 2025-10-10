@@ -1,5 +1,13 @@
-import React, { useState } from "react";
-import { Grid, Button, Input, Icon, Dimmer, Loader } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import {
+  Grid,
+  Button,
+  Input,
+  Icon,
+  Dimmer,
+  Loader,
+  Transition,
+} from "semantic-ui-react";
 // import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./ProcedimientoDeAdmisionProceso.scss";
@@ -14,21 +22,15 @@ export function ProcesoDeAdmisionPaso02(props) {
   const [dni, setdni] = useState("");
   const [bandera, setBandera] = useState(false);
   const [investigador, setInvestigador] = useState(null);
+  const [visible, setVisible] = useState(false);
 
-  // const [contador, setContador] = useState(0);
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    setVisible(true);
+  }, []);
 
-  // const incrementar = () => {
-  //   setContador(contador + 1);
-  //   setBandera(true);
-  //   if (contador >= 2) {
-  //     toast.success("¡El investigador se encontró!");
-  //   } else {
-  //     toast.error("¡El investigador NO se encontró!");
-  //   }
-  // };
   const abrirEnNuevaVentana = () => {
     window.open(
-      // "https://docs.google.com/forms/d/e/1FAIpQLSeVc1PPuqHvj3h_y7F1dqxi9r4pwIS_OhhiS60kppoE3vAvHw/viewform",
       enlace_formulario_investigador,
       "_blank",
       "toolbar=yes,scrollbars=yes,resizable=yes,width=900,height=700"
@@ -85,16 +87,6 @@ export function ProcesoDeAdmisionPaso02(props) {
       });
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      // behavior: "smooth",
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
-  };
-  scrollToTop();
-
   return (
     <>
       {loader && (
@@ -102,110 +94,109 @@ export function ProcesoDeAdmisionPaso02(props) {
           <Loader size="big">Espere un momento...</Loader>
         </Dimmer>
       )}
-      <Grid className="gridPage" stackable>
-        <Grid.Row>
-          <Grid.Column>
-            <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
+      <div className="acercade-page">
+        <Grid.Column>
+          <Transition animation="fade down" duration={800} visible={visible}>
+            <div>
+              <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
+              <p className="descripcionPage" style={{ marginBottom: "20px" }}>
+                <b>PASO 2:</b> Verifique si se encuentra registrado/a el/la
+                <b> Investigador/a Principal.</b>
+                <br />
+                La búsqueda debe realizarse a través del número del
+                <b> DNI del Investigador/a</b>, el cual debe escribirse
+                <b> sin puntos</b>.
+                <br />
+                <i>
+                  Ejemplo: <b>25789321</b>
+                </i>
+              </p>
+              <div className="alerta">
+                ⚠️ Por favor, evite salir de esta página hasta finalizar el
+                procedimiento de admisión ⚠️
+              </div>
+            </div>
+          </Transition>
 
-            <p className="descripcionPage">
-              <b>PASO 2:</b> Ingrese el DNI del/la Investigador/a Principal.
-              Ingrese el DNI sin puntos. Ejemplo 25789321.
+          <Transition animation="fade left" duration={800} visible={visible}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="contenedor-cartas">
+                <Input
+                  icon="search"
+                  placeholder="Ingrese el número de DNI"
+                  value={dni}
+                  onChange={handledniChange}
+                  onKeyUp={(event) => {
+                    if (event.key === "Enter" && isDniValid) {
+                      buscarInvestigador2();
+                    }
+                  }}
+                  style={{ minWidth: "320px" }}
+                />
+
+                <Button
+                  primary
+                  onClick={buscarInvestigador2}
+                  disabled={!isDniValid}
+                >
+                  Buscar
+                </Button>
+              </div>
+            </div>
+          </Transition>
+
+          {mensajeDni && (
+            <p className="mensajeValido">
+              🚨 Ingrese un número de DNI válido (no debe llevar punto) 🚨
             </p>
+          )}
 
-            <h2 className="descripcionPage" style={{ marginTop: "0px" }}>
-              Por favor evite salir de esta página hasta finalizar el
-              procedimiento de admisión
-            </h2>
-          </Grid.Column>
-        </Grid.Row>
-
-        <Grid.Row columns={2} verticalAlign="middle">
-          <Grid.Column width={14} style={{ padding: "0px 14px" }}>
-            <Input
-              icon
-              placeholder="DNI del/la Investigador/a Principal"
-              style={{
-                width: "100%",
-              }}
-            >
-              <input
-                className="inputProcesoDeAdmision"
-                value={dni}
-                onChange={handledniChange}
-                onKeyUp={(event) => {
-                  if (event.key === "Enter" && isDniValid) {
-                    // incrementar();
-                    buscarInvestigador2();
-                  }
-                }}
-              />
-              <Icon className="iconBuscar" name="search" />
-            </Input>
-          </Grid.Column>
-
-          <Grid.Column
-            width={2}
-            textAlign="center"
-            style={{ padding: "0px 0px 0px 14px" }}
-          >
-            {/* <Button className="buttonFormat" onClick={incrementar}> */}
-            <Button
-              className="buttonFormat"
-              onClick={buscarInvestigador2}
-              disabled={!isDniValid}
-            >
-              Buscar
-            </Button>
-          </Grid.Column>
-        </Grid.Row>
-        {mensajeDni && (
-          <p className="mensajeValido">
-            Debe ingresar un DNI válido, recuerde que no debe llevar punto '.'
-          </p>
-        )}
-        <Grid.Row centered>
-          {/* {contador >= 3 ? ( */}
           {investigador ? (
-            <Grid.Column textAlign="center">
+            <div className="resultado-exito">
               <h2 className="mensajeEncontrado">
-                El/la investigador/a principal ya esta registrado/a, ahora
-                proceda al paso siguiente haciendo click en el siguiente botón
+                ✅ El/la Investigador/a Principal está registrado/a.
               </h2>
-
+              <p className="descripcionProceso">
+                Ahora puedes proceder al paso 3 haciendo clic en el siguiente
+                botón:
+              </p>
               <Button
-                className="buttonFormat"
+                className="buttonFormatGreen"
                 onClick={onPaso3}
-                style={{ marginBottom: "30px" }}
+                icon
+                labelPosition="right"
               >
                 Siguiente paso
+                <Icon name="arrow alternate circle right" />
               </Button>
-            </Grid.Column>
+            </div>
           ) : (
             <>
               {bandera && (
-                <Grid.Column textAlign="center">
+                <div className="resultado-error">
                   <h2 className="mensajeNoEncontrado">
-                    Al parecer el/la Investigador/a Principal no esta
-                    registrado/a, por lo tanto, lo/la debe registrar en el
-                    siguiente botón
+                    ⛔ El/la Investigador/a Principal NO está registrado/a.
                   </h2>
+                  <p className="descripcionProceso">
+                    Por lo tanto, debe registrarlo/a haciendo clic en el
+                    siguiente botón:
+                  </p>
 
                   <Button
-                    className="buttonFormat"
-                    // as={Link}
-                    // to="https://docs.google.com/forms/d/e/1FAIpQLSeVc1PPuqHvj3h_y7F1dqxi9r4pwIS_OhhiS60kppoE3vAvHw/viewform"
-                    // target="_blank"
+                    className="buttonFormatRegister"
+                    icon
+                    labelPosition="left"
                     onClick={abrirEnNuevaVentana}
-                    style={{ marginBottom: "30px" }}
                   >
                     Registrar Nuevo/a Investigador/a Principal
+                    <Icon name="address book outline" />
                   </Button>
-                </Grid.Column>
+                </div>
               )}
             </>
           )}
-        </Grid.Row>
-      </Grid>
+        </Grid.Column>
+      </div>
     </>
   );
 }

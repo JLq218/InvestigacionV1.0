@@ -2,12 +2,12 @@
 
 .ui.primary.button {
     // font-size: 1px ;
-    
+    font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: vars.$color-blanco-puro;
     background: vars.$color-primario;
-    border-radius: 7px;
+    // border-radius: 7px;
     &:hover{
         background: vars.$color-primario-hover;
     }
@@ -23,7 +23,7 @@
     font-weight: 600;
     color: vars.$color-blanco-puro;
     background: vars.$color-primario;
-    border-radius: 7px;
+    border-radius: 5px;
     
     &:hover{
         background: vars.$color-primario-hover;
@@ -49,9 +49,9 @@
       font-size: 1.3rem;
       font-weight: 600;
       color: vars.$color-primario;
-      border-radius: 7px;
+      border-radius: 5px;
       background: rgb(255, 255, 255, 0) !important;
-      box-shadow:0px 0px 0px 4px vars.$color-primario inset !important;
+      box-shadow:0px 0px 0px 2px vars.$color-primario inset !important;
       
       &:hover{
           background: vars.$color-primario !important;
@@ -68,6 +68,51 @@
   @media (max-width: 768px){
     &.ui.labeled.icon.button, .ui.labeled.icon.buttons {
       padding: 10px 10px 10px 40px!important;
+    }
+  }
+}
+
+
+.buttonFormatGreen{
+  &.ui.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: vars.$color-blanco-puro;
+    background: #28A745;
+    border-radius: 5px;
+    margin: 0px;
+    &:hover{
+        background: #3ED265;
+    }
+    &:focus{
+      background: #28A745;
+    }
+    
+    @media (max-width: 768px){
+        font-size: 1.1rem;
+    }
+  }
+}
+
+.buttonFormatRegister{
+  &.ui.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: vars.$color-blanco-puro;
+    background: vars.$color-primario;;
+    border-radius: 5px;
+    margin: 0px;
+    &:hover{
+        background: vars.$color-primario-hover;
+    }
+    &:focus{
+      background: vars.$color-primario;;
+    }
+    
+    @media (max-width: 768px){
+        font-size: 1.1rem;
     }
   }
 }
