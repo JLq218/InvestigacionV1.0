@@ -1,183 +1,126 @@
-import React from "react";
-import { Grid, GridColumn, Button } from "semantic-ui-react";
+import React, { useEffect, useState } from "react";
+import { Button, Icon, Transition } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-
-import "./ProcedimientoDeAdmisionInfo.scss";
 import { PasoComponent } from "../../components";
-// import imaYoutube from "../../images/pantallaVideo.png";
+import "./ProcedimientoDeAdmisionInfo.scss";
 
 export function ProcedimientoDeAdmisionInfo() {
-  const scrollToNextStep = (id) => {
-    const nextStep = document.querySelector(id);
-    if (nextStep) {
-      nextStep.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
+  const [visible, setVisible] = useState(false);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      // behavior: "smooth",
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
-    });
-  };
-  scrollToTop();
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    setVisible(true);
+  }, []);
 
   return (
-    <Grid
-      className="gridInicioProcesoDeAdmision"
-      style={{ margin: "0px 0px 0px 0px" }}
-    >
-      <Grid.Row>
-        <GridColumn textAlign="center">
+    <div className="acercade-page">
+      <Transition animation="fade down" duration={800} visible={visible}>
+        <div>
           <h2 className="tituloPage">
-            PROCEDIMIENTO DE ADMISIÓN DEL PROTOCOLO DE INVESTIGACIÓN
+            🗃️ INFORMACIÓN ACERCA DEL PROCEDIMIENTO DE ADMISIÓN
           </h2>
-          {/* <section className="contenedorNavProcedimiento">
-            <a
-              href="https://docs.google.com/document/d/1PwBB2LKeAjEmK4UHAAGwxn3KqIvdQYQc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="linkProceso"
-            >
-              <Icon name="file text" />
-              POE 1 de Admisión
-            </a>
-            <span
-              className="linkProceso"
-              onClick={() => scrollToNextStep("#imagenYoutube")}
-            >
-              <Icon name="youtube" />
-              Video Ilustrativo
-            </span>
-          </section> */}
-          <div className="contenedorEtapas">
-            <h3 className="subtituloPage">
-              ETAPA 1: Presentación y registro del protocolo en formato DIGITAL
-            </h3>
+          <p className="descripcionPage">
+            El <b>Procedimiento de Admisión </b> se desarrolla en{" "}
+            <b>dos etapas</b>: una presentación en <b>formato digital</b> y otra
+            en <b>formato físico</b>. <br />A continuación, se{" "}
+            <b>describen las etapas y los pasos</b> que debe seguir el
+            solicitante para presentar su{" "}
+            <b>Protocolo de Investigación en Salud</b> en la{" "}
+            <b>Unidad de Investigación</b> del{" "}
+            <b>Ministerio de Salud de Jujuy</b>.
+          </p>
+        </div>
+      </Transition>
+
+      {/* ETAPA 1 */}
+      <div className="devpage-content-center">
+        <Transition animation="fade right" duration={800} visible={visible}>
+          <div className="admision-stage stage-digital">
+            <p className="admision-stage-title">
+              <b>ETAPA 1:</b> Presentación y Registro en Formato Digital
+              🖥️💻📱📤
+            </p>
+            <p className="admision-stage-desc">
+              En esta fase, el solicitante debe completar el proceso en{" "}
+              <b>formato digital</b> mediante el <b>sistema web de registro</b>.
+            </p>
             <PasoComponent
               id="paso1"
               numero="1"
               titulo="Verificación de Datos"
-              descripcion="El <strong>solicitante</strong> debe verificar si se encuentran
-                            registrados los datos del Centro de Investigación y los
-                            datos de los investigadores involucrados en el proyecto. En caso de que no se encuentren
-                            registrados, deberá registrarlos."
-              opcional={false}
-            ></PasoComponent>
-            <div
-              className="down-arrow"
-              onClick={() => scrollToNextStep("#paso2")}
-            ></div>
+              descripcion="El <b>solicitante</b> debe verificar si se encuentran
+              registrados los datos de la <b>Institución de Afiliación</b> y del/la <b>Investigador/ar Principal</b>.
+               <b>Si no, deberá registrarlos</b>."
+            />
             <PasoComponent
               id="paso2"
               numero="2"
-              titulo="Completar el formulario digital"
-              descripcion="El
-                            <strong>solicitante</strong>
-                            debe completar el Formulario Digital de Registro de Protocolos de Investigación en Salud en la Provincia de Jujuy."
-              opcional={false}
-            ></PasoComponent>
-            <div
-              className="down-arrow"
-              onClick={() => scrollToNextStep("#paso3")}
-            ></div>
+              titulo="Completar el Formulario Digital"
+              descripcion="El <b>solicitante</b> debe completar el <b>Formulario Digital
+              de Registro de Protocolos de Investigación en Salud de la Provincia de Jujuy</b>. En la cual se le
+              solicitará datos y documentación acerca del protocolo."
+            />
             <PasoComponent
               id="paso3"
               numero="3"
-              titulo="Admisión administrativa de la documentación en formato digital"
-              descripcion="El
-                            <strong>Área de Investigación del Ministerio de Salud de
-                                Jujuy</strong>
-                            revisará la documentación presentada y se comunicara con el solicitante, confirmando si la documentación presentada esta completa o si se requiere documentación adicional en un plazo de hasta 5 días hábiles."
-              opcional={false}
-            ></PasoComponent>
-            {/* <div
-                            className="down-arrow"
-                            onClick={() => scrollToNextStep("#paso4")}
-                        ></div>
-                        <PasoComponent
-                            id="paso4"
-                            numero="4"
-                            titulo="Revisión de los formularios ¿Están completos y correctos?"
-                            descripcion="<strong>SI:</strong> Se inicia el proceso de admisión del protocolo en
-                formato físico. <br /><br />
-                <strong>NO:</strong> Se solicitará modificaciones o adendas."
-                            opcional={false}
-                        ></PasoComponent>
-                        <div
-                            className="down-arrow"
-                            onClick={() => scrollToNextStep("#pasoOpcional")}
-                        ></div>
-                        <PasoComponent
-                            id="pasoOpcional"
-                            numero="Opcional"
-                            titulo="Se ofrece una asesoría al investigador ¿Acepta?"
-                            descripcion="<strong>SI:</strong> Se pacta el día, horario y lugar para la asesoría. <br /><br />
-                            <strong>NO:</strong> Se solicita la presentación de los documentos físicos."
-                            opcional={true}
-                        ></PasoComponent> */}
-            <h5 className="alertaProceso">
-              SOLO UNA VEZ CONCLUIDA EL PROCESO DE ADMISIÓN DIGITAL SE
-              SOLICITARÁ LO SIGUIENTE
-            </h5>
-            <h3 className="subtituloPage">
-              ETAPA 2: Presentación y registro del protocolo en formato FÍSICO
-            </h3>
-            <div
-              className="down-arrow"
-              onClick={() => scrollToNextStep("#paso4")}
-            ></div>
+              titulo="Admisión Administrativa"
+              descripcion="La <b>Unidad de Investigación revisará</b> todos los datos y documentación
+              presentada de forma digital y <b>comunicará</b> si está completa o requiere correcciones
+              en un <b>plazo de hasta 5 días hábiles</b>."
+            />
+            <div className="admision-alert">
+              ⚠️ Una vez <b>aprobada</b> este proceso digital, deberá realizar
+              la presentación en <b>formato físico</b>. ⚠️
+            </div>
+          </div>
+        </Transition>
+
+        {/* ETAPA 2 */}
+        <Transition animation="fade left" duration={800} visible={visible}>
+          <div className="admision-stage stage-fisica">
+            <p className="admision-stage-title">
+              <b>ETAPA 2: </b> Presentación en Formato Digital 📑➡️🏬
+            </p>
+            <p className="admision-stage-desc">
+              Luego de la{" "}
+              <b>
+                validación de los datos y documentación presentada digitalmente
+              </b>
+              , el solicitante debe <b>entregarlas impresas</b> en la oficina de
+              la
+              <b> Unidad de Investigación</b>.
+            </p>
+
             <PasoComponent
               id="paso4"
               numero="4"
-              titulo="Presentación en formato físico"
-              descripcion="El <strong>solicitante</strong> debe presentar los documentos en la oficina de la Coordinación de Docencia y Capacitación, sita en Av. Italia 41, esquina Independencia frente al salón Auditorium del Ministerio de Salud de la Provincia de Jujuy. La documentación mínima requerida se describe en el documento POE 1 de Admisión "
-              opcional={false}
-            ></PasoComponent>
-            <div
-              className="down-arrow"
-              onClick={() => scrollToNextStep("#paso5")}
-            ></div>
+              titulo="Entrega de la Documentación"
+              descripcion="El <b>solicitante</b> presenta el Protocolo de Investigacion <b>impreso</b> en la
+              oficina de la <b>Unidad de Investigación</b>, la cual se encuentra en la Subdirección Provincial de Formación y Capacitación (Av. Italia 41, esquina
+              Independencia)."
+            />
+
             <PasoComponent
               id="paso5"
               numero="5"
-              titulo="Revisión de los documentos en formato fisico"
-              descripcion="El <strong>Área de Investigación del Ministerio de Salud de Jujuy</strong> revisará la documentación presentada y responderá al <strong>solicitante</strong> en un plazo de hasta 5 días hábiles desde la recepción de la documentación, informando si son necesarias adendas y/o modificaciones, o si la documentación presentada es pertinente."
-              opcional={false}
-            ></PasoComponent>
-            {/* <div
-                            className="down-arrow"
-                            onClick={() => scrollToNextStep("#paso7")}
-                        ></div>
-                        <PasoComponent
-                            id="paso7"
-                            numero="7"
-                            titulo="Evaluación ¿Cumple los requisitos?"
-                            descripcion="<strong>SI:</strong> La documentación cumple con los requisitos solicitados. El solicitante será notificado sobre la fecha de pase al Comité de Ética de Investigación en Salud (CEIS) para la evaluación. <br /><br />
-                <strong>NO:</strong> Se informará si corresponde la evaluacion por partes del CEIS."
-                            opcional={false}
-                        ></PasoComponent> */}
-            {/* <h5 className="alertaProceso--purple">VIDEO ILUSTRATIVO</h5>
-            <img
-              src={imaYoutube}
-              style={{ width: "100%", maxWidth: "800px" }}
-              alt="Imagen por ahora de ejemplo"
-              id="imagenYoutube"
-            ></img> */}
-
-            <Button
-              className="buttonFormat"
-              as={Link}
-              to="/procedimientoInicio"
-              style={{ marginTop: "20px", marginBottom: "50px" }}
-            >
-              Regresar
-            </Button>
+              titulo="Revisión Final"
+              descripcion="La <b>Unidad de Investigación</b> revisará la documentación
+              impresa y notificará al <b>solicitante</b> si
+              <b>requiere correcciones</b> o si está lista para la <b>evaluación</b> por parte del Comité de Ética."
+            />
           </div>
-        </GridColumn>
-      </Grid.Row>
-    </Grid>
+        </Transition>
+        <Button
+          className="buttonFormatRegister"
+          as={Link}
+          to="/procedimientoInicio"
+          icon
+          labelPosition="left"
+        >
+          <Icon name="arrow alternate circle left outline" />
+          Regresar
+        </Button>
+      </div>
+    </div>
   );
 }

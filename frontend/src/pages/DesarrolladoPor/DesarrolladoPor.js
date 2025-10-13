@@ -64,7 +64,13 @@ export function DesarrolladoPor() {
             />
           </a>
           <div className="devpage-button-container">
-            <Button primary as={Link} to="/">
+            <Button
+              className="buttonFormatRegister"
+              as={Link}
+              to="/"
+              icon
+              labelPosition="left"
+            >
               <Icon name="home" />
               Volver al inicio
             </Button>

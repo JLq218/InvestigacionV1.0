@@ -1,79 +1,71 @@
-@import "../../utils/variables_globales.scss";
+@use "../../utils/variables_globales.scss" as vars;
 
-.pasos {
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    border-bottom: 1px solid #D3D1D1;
-    border-radius: 15px;
-    padding: 10px 0 10px 0;
+.paso-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 25px 0px 0px 0px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  }
+  @media (max-width: 768px){
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0px 0px 0px;
+  }
 }
 
-.pasos__circulo {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom right, #67257d 25%, #9a3abf 65%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
+.paso-contenido {
 
-.pasos__circulo-h3 {
-    font-size: 25px;
-    color: #fff;
-}
-
-.pasos__titulo {
-    color: $color-primario;
-    margin: 10px 0 5px 0;
-}
-
-.pasos__descripcion {
-    color: $color-primario;
-    margin: 15px 0 12px 0;
-    text-align: justify;
-    font-size: 18px;
-
-    @media (max-width: 400px) {
-        text-align: justify;
+  .paso-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: vars.$color-primario;
+    gap: 10px;
+    margin-bottom: 8px;
+    
+    @media (max-width: 768px){
+      font-size: 1.1rem;
     }
+  }
+
+  .paso-icono {
+    color: vars.$color-primario;
+    opacity: 0.8;
+  }
+
+  .paso-descripcion {
+    font-size: 1rem;
+    color: #3c3c3c;
+    line-height: 1.6;
+    margin: 0;
+
+    @media (max-width: 768px){
+      font-size: 0.9rem;
+    }
+  }
 }
 
-.pasos__opcional {
-    width: 100px;
-    height: 45px;
-    border-radius: 20px;
-    background: linear-gradient(to bottom right, #67257d 25%, #9a3abf 65%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    color: #fff;
-    box-sizing: border-box;
-}
+// // Responsive
+// @media (max-width: 700px) {
+//   .paso-card {
+//     flex-direction: column;
+//     padding: 18px;
 
-.pasos-p {
-    color: $color-primario;
-    font-size: 12px;
-    margin: 0 0 10px 0;
-}
+//     &::before {
+//       left: 22px;
+//     }
 
-.pasos__opcional {
-    width: 100px;
-    height: 45px;
-    border-radius: 20px;
-    background: linear-gradient(to bottom right, #67257d 25%, #9a3abf 65%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    color: #fff;
-    box-sizing: border-box;
-}
+//     .paso-numero {
+//       margin-bottom: 10px;
+//     }
+//   }
+
+//   .paso-titulo {
+//     font-size: 1.1rem;
+//   }
+// }
