@@ -116,3 +116,28 @@
     }
   }
 }
+
+.buttonFormatJornada{
+  &.ui.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: vars.$color-blanco-puro;
+    background: vars.$color-primario;;
+    border-radius: 5px;
+    margin: 0px;
+    &:hover{
+        background: vars.$color-primario-hover;
+    }
+    &:focus{
+      background: vars.$color-primario;;
+    }
+    
+    @media (max-width: 768px){
+      font-size: 1rem;
+      &.ui.labeled.icon.button, .ui.labeled.icon.buttons {
+        padding: 10px 12px 10px 40px !important;
+      }
+    }
+  }
+}

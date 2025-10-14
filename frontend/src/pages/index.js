@@ -11,3 +11,4 @@ export * from "./ComiteDeEtica";
 export * from "./Normativas";
 export * from "./Requisitos";
 export * from "./DesarrolladoPor";
+export * from "./JornadaDeInvestigacion";

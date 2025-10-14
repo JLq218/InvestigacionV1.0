@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image, Icon, Button, Transition } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Image, Transition } from "semantic-ui-react";
 import acit from "../../images/logo-gob-05-25.png";
 import { developers } from "../../data/equipoDesarrollo";
 import "./DesarrolladoPor.scss";
@@ -63,18 +62,6 @@ export function DesarrolladoPor() {
               alt="Agencia de Ciencia y Tecnología"
             />
           </a>
-          <div className="devpage-button-container">
-            <Button
-              className="buttonFormatRegister"
-              as={Link}
-              to="/"
-              icon
-              labelPosition="left"
-            >
-              <Icon name="home" />
-              Volver al inicio
-            </Button>
-          </div>
         </div>
       </Transition>
     </div>

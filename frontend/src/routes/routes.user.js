@@ -6,11 +6,12 @@ import {
   ProcedimientoDeAdmisionInfo,
   ProcedimientoDeAdmisionProceso,
   Error404,
-  PreguntasFrecuentes,
-  ComiteDeEtica,
+  // PreguntasFrecuentes,
+  // ComiteDeEtica,
   Normativas,
   Requisitos,
   DesarrolladoPor,
+  JornadaDeInvestigacion,
 } from "../pages";
 import { UserLayout, BasicLayout } from "../layouts";
 
@@ -81,10 +82,16 @@ const routes = [
     layout: BasicLayout,
     component: Error404,
   },
+  // {
+  //   path: "/preguntasFrecuentes",
+  //   layout: UserLayout,
+  //   component: PreguntasFrecuentes,
+  //   exact: true,
+  // },
   {
-    path: "/preguntasFrecuentes",
+    path: "/jornadaInvestigacion",
     layout: UserLayout,
-    component: PreguntasFrecuentes,
+    component: JornadaDeInvestigacion,
     exact: true,
   },
 ];
