@@ -40,42 +40,6 @@ export function JornadaDeInvestigacion() {
             <p className="jornada-stage-fecha">
               <Icon name="calendar outline" /> 03 de Octubre, 2025
             </p>
-            {/* <p className="jornada-stage-desc">
-              El <b>3 de octubre</b> se llevó a cabo la{" "}
-              <b>2° Jornada Provincial de Investigación en Salud</b>, bajo el
-              lema{" "}
-              <b>
-                <i>
-                  “La Ciencia de la Salud entre Cerros, Quebradas, Selvas y
-                  Valles”
-                </i>
-              </b>
-              . El evento tuvo lugar en el{" "}
-              <b>Salón Auditorio del Ministerio de Salud</b>, ubicado en{" "}
-              <b>Av. Italia esquina Independencia</b>, en{" "}
-              <b>San Salvador de Jujuy</b>, y se desarrolló entre las{" "}
-              <b>8:30 y las 13:30 horas</b>.
-              <br /> Durante la jornada, se presentaron las{" "}
-              <b>
-                {" "}
-                agendas y líneas prioritarias de investigación provincial y
-                nacional
-              </b>
-              , se realizó la
-              <b> exhibición de trabajos en formato póster</b> y se compartieron
-              los
-              <b>
-                {" "}
-                resultados del curso “Metodología de la Investigación en Salud”
-              </b>
-              .
-              <br /> Un <b>comité científico evaluó los trabajos presentados</b>
-              , distinguiendo a los más destacados por su calidad y aporte al
-              conocimiento. Además, todos los trabajos formarán parte de un
-              <b> libro de resúmenes con ISBN</b> , otorgándole{" "}
-              <b>validez editorial y académica</b> a las producciones
-              participantes.
-            </p> */}
             <p className="jornada-stage-desc">
               El <b>3 de octubre de 2025</b> se llevó a cabo la{" "}
               <b>2° Jornada Provincial de Investigación en Salud</b>, bajo el

@@ -2,7 +2,6 @@
 
 
 .gridInicio{
-    // margin: -14px 0px 0px 0px !important;
     max-width: 1300px;
     @media (min-width: 768px){
         height: 100%;
@@ -12,9 +11,7 @@
 .tituloGrande,
 .tituloMediano,
 .tituloPequenio {
-    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-family: 'Montserrat', sans-serif; /* texto principal */
-    // font-family: 'Montserrat', sans-serif; /* títulos */
     color: vars.$color-primario;
 }
 

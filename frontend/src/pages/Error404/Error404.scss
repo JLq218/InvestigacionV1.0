@@ -1,62 +1,58 @@
 @import "../../utils/variables_globales.scss";
 
-.cuadroCentro{
-    margin: 50px;
-    padding: 0px 0px 50px 0px !important;
-    background-color: $color-blanco-puro;
-    box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.54);
-    -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.54);
-    -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.54);
-    border-radius: 40px;
-    @media (max-width: 768px){
-        margin: 15px;
-    }
+.error404-grid {
+  margin: 0px !important;
+  height: 100vh !important; // ocupa toda la pantalla
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px !important;
+}
+
+.error404-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1300px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .tituloPrincipalError404{
-    font-size: 250px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-size: 16rem;
+    font-family: 'Montserrat', sans-serif;
     color: $color-primario;
     font-weight: bold;
     margin: 0px;
     @media (max-width: 768px){
-        font-size: 100px;
+        font-size: 7rem;
     }
 }
 
 .subtituloError404{
-    font-size: 42px;
+    // font-size: 42px;
+    font-size: 2.8rem;
     font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: 'Montserrat', sans-serif;
     color: $color-primario;
     margin: 0px;
     @media (max-width: 768px){
-        font-size: 28px;
+        font-size: 1.6rem;
     }
 }
 
 .descripcionError404{
-    font-size: 28px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-size: 1.9rem;
+    font-family: 'Montserrat', sans-serif;
     color: $color-primario;
     margin: 30px 0px;
     @media (max-width: 768px){
         margin: 15px 0px;
-        font-size: 18px;
-    }
-}
-
-.buttonFormatError404{
-    font-size: 24px !important;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    color: $color-blanco-puro !important;
-    font-weight: bold !important;
-    background: $color-primario !important;
-    border-radius: 20px !important;
-    &:hover{
-        background: $color-primario-hover !important;
-    }
-    @media (max-width: 768px){
-        font-size: 16px !important;
+        font-size: 1.1rem;
     }
 }
