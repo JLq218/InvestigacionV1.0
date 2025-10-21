@@ -77,14 +77,29 @@ export function Contacto() {
               textAlign="center"
               style={{ height: "50vh", maxHeight: "400px" }}
             >
-              <iframe
-                title="Mapa de google"
-                className="contactoMapa"
-                onLoad={cargarMapa}
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5191.9211060443085!2d-65.29637308246305!3d-24.1867706389301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5b8e135cdd%3A0xdef2a693fecfc293!2sMinisterio%20de%20Salud!5e0!3m2!1ses!2sar!4v1699364448663!5m2!1ses!2sar"
-                style={{ border: 0 }}
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <div
+                style={{
+                  borderRadius: "10px",
+                  overflow: "hidden",
+                  width: "100%",
+                  height: "100%", // ajusta según necesites
+                }}
+              >
+                <iframe
+                  title="Mapa de google"
+                  className="contactoMapa"
+                  onLoad={cargarMapa}
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5191.9211060443085!2d-65.29637308246305!3d-24.1867706389301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5b8e135cdd%3A0xdef2a693fecfc293!2sMinisterio%20de%20Salud!5e0!3m2!1ses!2sar!4v1699364448663!5m2!1ses!2sar"
+                  style={{
+                    border: "0",
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                  }}
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </Grid.Column>
           </Grid.Row>
         </Transition>
