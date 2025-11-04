@@ -86,7 +86,7 @@ export function JornadaDeInvestigacion() {
               className="buttonFormatJornada"
               as={Link}
               target="_blank"
-              to="https://drive.google.com/file/d/1pb-P8Yz-b-JNB2vMJPNQX8kt_KTbCYLe/view"
+              to="https://drive.google.com/file/d/1LOYsSke9K0T5ak5n26iesOtToDIwCAE8/view?usp=sharing"
               icon
               labelPosition="left"
             >
@@ -155,7 +155,7 @@ export function JornadaDeInvestigacion() {
               className="buttonFormatJornada"
               as={Link}
               target="_blank"
-              to="https://drive.google.com/file/d/1pb-P8Yz-b-JNB2vMJPNQX8kt_KTbCYLe/view"
+              to="https://drive.google.com/file/d/1pb-P8Yz-b-JNB2vMJPNQX8kt_KTbCYLe/view?usp=sharing"
               icon
               labelPosition="left"
             >
