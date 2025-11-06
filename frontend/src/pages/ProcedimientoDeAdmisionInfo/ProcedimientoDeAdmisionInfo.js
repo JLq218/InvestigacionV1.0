@@ -79,7 +79,7 @@ export function ProcedimientoDeAdmisionInfo() {
         <Transition animation="fade left" duration={800} visible={visible}>
           <div className="admision-stage stage-fisica">
             <p className="admision-stage-title">
-              <b>ETAPA 2: </b> Presentación en Formato Digital 📑➡️🏬
+              <b>ETAPA 2: </b> Presentación de la Documentación Impresa 📑➡️🏬
             </p>
             <p className="admision-stage-desc">
               Luego de la{" "}
