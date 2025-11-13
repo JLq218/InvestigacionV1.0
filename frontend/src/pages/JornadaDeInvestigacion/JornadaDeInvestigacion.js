@@ -143,8 +143,8 @@ export function JornadaDeInvestigacion() {
               </b>{" "}
               y se presentaron las
               <b> funciones del Comité de Ética de la Provincia</b>. La jornada
-              incluyó también <b>presentaciones artísticas</b>y la exposición de
-              la{" "}
+              incluyó también <b>presentaciones artísticas </b>y la exposición
+              de la{" "}
               <b>
                 plataforma web para la admisión administrativa de protocolos de
                 investigación
