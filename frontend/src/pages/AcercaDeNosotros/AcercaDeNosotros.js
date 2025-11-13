@@ -5,6 +5,7 @@ import { CardAbout } from "../../components";
 
 import misionImagen from "../../images/mision.jpg";
 import visionImagen from "../../images/vision.jpg";
+import { personal } from "../../data/personalDeLaUnidad";
 import "./AcercaDeNosotros.scss";
 
 export function AcercaDeNosotros() {
@@ -42,6 +43,26 @@ export function AcercaDeNosotros() {
                 titulo="VISIÓN"
                 descripcion="Consolidarnos como una unidad de referencia en investigación en salud en la provincia, reconocida por su excelencia científica, su impacto en la salud pública y su contribución al diseño e implementación de políticas y prácticas innovadoras. Conformar una Red Provincial de Investigación en salud, comprometida con el contexto local y con la generación de conocimiento alineado con las prioridades y necesidades de salud de la población."
               ></CardAbout>
+            </div>
+            <div className="devpage-content-center">
+              <h3 className="devpage-collab-title">
+                PERSONAL DE LA UNIDAD DE INVESTIGACIÓN
+              </h3>
+
+              <div className="devpage-developers-list">
+                {personal.map((dev, index) => (
+                  <div
+                    key={index}
+                    className="devpage-developer-card"
+                    style={{
+                      borderLeft: `8px solid ${dev.color}`,
+                    }}
+                  >
+                    <h4>{dev.nombre}</h4>
+                    <p>{dev.descripcion}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Transition>
