@@ -7,8 +7,8 @@ app.use(express.json());
 app.use(cors());
 //Cargamos el modulo de direccionamiento de rutas
 
-app.use("/api/investigador", require("./routes/Investigador.js"));
-app.use("/api/institucion", require("./routes/Institucion.js"));
+app.use("/api-backend/api/investigador", require("./routes/Investigador.js"));
+app.use("/api-backend/api/institucion", require("./routes/Institucion.js"));
 //setting
 app.set("port", process.env.PORT || 3001);
 //starting the server
