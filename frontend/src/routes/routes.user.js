@@ -6,7 +6,7 @@ import {
   Contacto,
   ProcedimientoDeAdmisionInicio,
   ProcedimientoDeAdmisionInfo,
-  Requisitos,
+  ProcedimientoDeAdmisionVerificacion,
   ProcedimientoDeAdmisionProceso,
   DesarrolladoPor,
   Error404,
@@ -60,7 +60,7 @@ const routes = [
   {
     path: "/procedimiento/verificacion",
     layout: UserLayout,
-    component: Requisitos,
+    component: ProcedimientoDeAdmisionVerificacion,
     exact: true,
   },
   {

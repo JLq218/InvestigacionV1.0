@@ -1,4 +1,5 @@
 @use "../../scss/variables_globales.scss" as vars;
+
 .carta {
     flex: 1 1 300px; /* mínimo 300px, crece hasta el max-width */
     max-width: 700px;

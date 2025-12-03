@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Requisitos.scss";
+import "./ProcedimientoDeAdmisionVerificacion.scss";
 import {
   TableRow,
   TableHeaderCell,
@@ -16,7 +16,7 @@ import {
 
 import { requisitos } from "../../data/requisitosProceso";
 
-export function Requisitos() {
+export function ProcedimientoDeAdmisionVerificacion() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

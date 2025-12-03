@@ -7,6 +7,6 @@ export * from "./ProcedimientoDeAdmisionProceso";
 export * from "./Error404";
 export * from "./ComiteDeEtica";
 export * from "./Normativas";
-export * from "./Requisitos";
+export * from "./ProcedimientoDeAdmisionVerificacion";
 export * from "./DesarrolladoPor";
 export * from "./JornadaDeInvestigacion";
