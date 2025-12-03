@@ -1,9 +1,9 @@
-@import "../../utils/variables_globales.scss";
+@use "../../utils/variables_globales.scss" as vars;
 
 .iconIntegrante,
 .nombreIntegrante,
 .descripcionIntegrante {
-    color: $color-primario;
+    color: vars.$color-primario;
 }
 
 .iconIntegrante {

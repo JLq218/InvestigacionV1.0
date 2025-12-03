@@ -1,26 +1,68 @@
 @use "../../scss/variables_globales.scss" as vars;
 
-.acercade-page {
-    margin: 20px 10px 50px 10px;
-    max-width: 1300px;
-    background: vars.$color-blanco-puro;
-    padding: 40px;
-    border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-    height: auto;             /* que crezca solo con su contenido */
-    min-height: 0;            /* importante si el padre es flexbox */
-    align-self: flex-start;   /* evita que sea centrado/estirado por padre flex */
-      
-    @media (max-width: 768px){
-        margin: 15px 10px 55px;
-        padding: 20px 10px 20px 10px;
-    }
+.acercade-content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // centra horizontalmente todos los elementos
+  justify-content: center; // opcional: centra verticalmente si el contenedor tiene altura definida
+  margin-top: 30px;
+  gap: 25px; // separa cada elemento de manera uniforme
 }
 
-.contenedor-cartas{
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    justify-content: center;
+.acercade-collab-title {
+  text-align: center; // centra texto y encabezados
+  margin-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: vars.$color-primario;
+  @media (max-width: 768px){
+    font-size: 1.2rem;
+  }
+}
+
+.acercade-personal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 500px; // define el ancho máximo de la lista
+  align-items: stretch; // hace que las tarjetas ocupen todo el ancho disponible
+  margin: 0 auto; // centra la lista en la página
+}
+
+.acercade-personal-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: vars.$color-primario;
+    margin-bottom: 0px;
+    @media (max-width: 768px){
+        font-size: 1.1rem;
+    }
+  }
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #3c3c3c;
+    margin: 0;
+    @media (max-width: 768px){
+        font-size: 0.85rem;
+    }
+
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
 }

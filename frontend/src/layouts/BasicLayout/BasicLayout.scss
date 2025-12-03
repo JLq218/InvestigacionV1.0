@@ -1,7 +1,7 @@
-@import '../../utils/variables_globales.scss';
+@use "../../utils/variables_globales.scss" as vars;
 
 .basic-layout{
-    background-color: $color-fondo;
+    background-color: vars.$color-fondo;
     width: 100%;
     display: grid;
     min-height: 100vh;

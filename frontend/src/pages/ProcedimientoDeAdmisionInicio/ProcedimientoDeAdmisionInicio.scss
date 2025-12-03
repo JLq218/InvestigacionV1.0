@@ -1,6 +1,7 @@
-@import "../../utils/variables_globales.scss";
+@use "../../utils/variables_globales.scss" as vars;
+
 $separator-size: 5px;
-$separator-border-color: $color-primario;
+$separator-border-color: vars.$color-primario;
 
 @keyframes separator-width {
     0% {

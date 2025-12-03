@@ -1,0 +1,37 @@
+@use "../variables_globales.scss" as vars;
+
+// Centra el contenido de los componentes en la pantalla
+.contenedor-dos-columnas{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center;
+}
+
+//Fondo blanco de las paginas
+.contenedor-page {
+    margin: 20px 10px 50px 10px;
+    max-width: 1300px;
+    background: vars.$color-blanco-puro;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    height: auto;             /* que crezca solo con su contenido */
+    min-height: 0;            /* importante si el padre es flexbox */
+    align-self: flex-start;   /* evita que sea centrado/estirado por padre flex */
+      
+    @media (max-width: 768px){
+        margin: 15px 10px 55px;
+        padding: 20px 10px 20px 10px;
+    }
+    
+    @media (max-width: 767px) {
+        .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column {
+            width: 100% !important;
+            margin: 0 0 !important;
+            box-shadow: none !important;
+            padding: 1rem 0rem !important;
+        }
+    }
+}

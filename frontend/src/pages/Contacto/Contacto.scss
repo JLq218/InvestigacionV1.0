@@ -1,17 +1,5 @@
 @use "../../scss/variables_globales.scss" as vars;
 
-.acercade-page{
-
-  @media (max-width: 767px) {
-    .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column {
-      width: 100% !important;
-      margin: 0 0 !important;
-      box-shadow: none !important;
-      padding: 1rem 0rem !important;
-    }
-  }
-}
-
 .tituloItem,
 .descripcionItem{
     font-family: 'Montserrat', sans-serif;

@@ -21,7 +21,7 @@ export function ProcesoDeAdmisionPaso03() {
 
   return (
     <>
-      <div className="acercade-page">
+      <div className="contenedor-page">
         <Grid.Column>
           <Transition animation="fade down" duration={800} visible={visible}>
             <div>
@@ -44,7 +44,7 @@ export function ProcesoDeAdmisionPaso03() {
 
           <Transition animation="fade left" duration={800} visible={visible}>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div className="contenedor-cartas">
+              <div className="contenedor-dos-columnas">
                 <Button
                   className="buttonFormatRegister"
                   icon

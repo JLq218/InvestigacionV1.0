@@ -53,7 +53,7 @@ export function Requisitos() {
   };
 
   return (
-    <div className="acercade-page">
+    <div className="contenedor-page">
       <Transition animation="fade down" duration={800} visible={visible}>
         <div>
           <h2 className="tituloPage">
@@ -132,7 +132,7 @@ export function Requisitos() {
             disabled={requisitos.length !== selectedCheckboxes.length}
             className="buttonFormat"
             as={Link}
-            to={"/procedimientoProceso"}
+            to={"/procedimiento/admision"}
             icon
             labelPosition="right"
             style={{

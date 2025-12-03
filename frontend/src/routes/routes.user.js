@@ -1,17 +1,15 @@
 import {
   Inicio,
+  JornadaDeInvestigacion,
   AcercaDeNosotros,
+  Normativas,
   Contacto,
   ProcedimientoDeAdmisionInicio,
   ProcedimientoDeAdmisionInfo,
-  ProcedimientoDeAdmisionProceso,
-  Error404,
-  // PreguntasFrecuentes,
-  // ComiteDeEtica,
-  Normativas,
   Requisitos,
+  ProcedimientoDeAdmisionProceso,
   DesarrolladoPor,
-  JornadaDeInvestigacion,
+  Error404,
 } from "../pages";
 import { UserLayout, BasicLayout } from "../layouts";
 
@@ -24,9 +22,21 @@ const routes = [
     exact: true,
   },
   {
-    path: "/acercade",
+    path: "/jornada-investigacion",
+    layout: UserLayout,
+    component: JornadaDeInvestigacion,
+    exact: true,
+  },
+  {
+    path: "/acerca-de",
     layout: UserLayout,
     component: AcercaDeNosotros,
+    exact: true,
+  },
+  {
+    path: "/normativas",
+    layout: UserLayout,
+    component: Normativas,
     exact: true,
   },
   {
@@ -35,38 +45,26 @@ const routes = [
     component: Contacto,
     exact: true,
   },
-  // {
-  //   path: "/comite",
-  //   layout: UserLayout,
-  //   component: ComiteDeEtica,
-  //   exact: true,
-  // },
   {
-    path: "/normativas",
-    layout: UserLayout,
-    component: Normativas,
-    exact: true,
-  },
-  {
-    path: "/procedimientoInicio",
+    path: "/procedimiento",
     layout: UserLayout,
     component: ProcedimientoDeAdmisionInicio,
     exact: true,
   },
   {
-    path: "/procedimientoInformacion",
+    path: "/procedimiento/informacion",
     layout: UserLayout,
     component: ProcedimientoDeAdmisionInfo,
     exact: true,
   },
   {
-    path: "/requisitos",
+    path: "/procedimiento/verificacion",
     layout: UserLayout,
     component: Requisitos,
     exact: true,
   },
   {
-    path: "/procedimientoProceso",
+    path: "/procedimiento/admision",
     layout: UserLayout,
     component: ProcedimientoDeAdmisionProceso,
     exact: true,
@@ -81,18 +79,6 @@ const routes = [
     path: "*",
     layout: BasicLayout,
     component: Error404,
-  },
-  // {
-  //   path: "/preguntasFrecuentes",
-  //   layout: UserLayout,
-  //   component: PreguntasFrecuentes,
-  //   exact: true,
-  // },
-  {
-    path: "/jornadaInvestigacion",
-    layout: UserLayout,
-    component: JornadaDeInvestigacion,
-    exact: true,
   },
 ];
 

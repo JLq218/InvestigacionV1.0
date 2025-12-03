@@ -98,12 +98,12 @@ export function ProcesoDeAdmisionPaso01(props) {
           <Loader size="big">Espere un momento...</Loader>
         </Dimmer>
       )}
-      <div className="acercade-page">
+      <div className="contenedor-page">
         <Grid.Column>
           <Transition animation="fade down" duration={800} visible={visible}>
             <div>
               <h2 className="tituloPage">PROCEDIMIENTO DE ADMISIÓN</h2>
-              <p className="descripcionPage" style={{ marginBottom: "20px" }}>
+              <p className="descripcionPage">
                 <b>PASO 1:</b> Verifique si se encuentra registrada la{" "}
                 <b>
                   Institución de Afiliación del/la Investigador/a Principal.
@@ -127,7 +127,7 @@ export function ProcesoDeAdmisionPaso01(props) {
 
           <Transition animation="fade left" duration={800} visible={visible}>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div className="contenedor-cartas">
+              <div className="contenedor-dos-columnas">
                 <Input
                   icon="search"
                   placeholder="Ingrese el CUIT de la Institución"

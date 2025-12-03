@@ -13,7 +13,7 @@ export function DesarrolladoPor() {
   }, []);
 
   return (
-    <div className="acercade-page">
+    <div className="contenedor-page">
       <Transition animation="fade down" duration={800} visible={visible}>
         <div>
           <h2 className="tituloPage">🏗️ EQUIPO DE DESARROLLO</h2>

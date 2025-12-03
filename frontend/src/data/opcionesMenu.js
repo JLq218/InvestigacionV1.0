@@ -4,17 +4,13 @@ export const opcionesMenu = [
     texto: "Inicio",
   },
   {
-    namePath: "/jornadaInvestigacion",
+    namePath: "/jornada-investigacion",
     texto: "Jornadas de Investigación",
   },
   {
-    namePath: "/acercade",
+    namePath: "/acerca-de",
     texto: "Acerca de nosotros",
   },
-  // {
-  //   namePath: "/comite",
-  //   texto: "Comité Provincial de Ética",
-  // },
   {
     namePath: "/normativas",
     texto: "Normativas",

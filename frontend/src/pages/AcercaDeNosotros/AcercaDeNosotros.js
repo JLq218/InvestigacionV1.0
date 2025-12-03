@@ -17,12 +17,12 @@ export function AcercaDeNosotros() {
   }, []);
 
   return (
-    <div className="acercade-page">
+    <div className="contenedor-page">
       <Grid.Column>
-        <Transition animation="fade down" duration={800} visible={visible}>
+        <Transition animation="fade up" duration={800} visible={visible}>
           <div>
             <h2 className="tituloPage">ACERCA DE LA UNIDAD DE INVESTIGACIÓN</h2>
-            <p className="descripcionPage" style={{ marginBottom: "20px" }}>
+            <p className="descripcionPage">
               La <b>Unidad de Investigación</b> integra la Subdirección
               Provincial de Formación y Capacitación, de la
               <b> Dirección Provincial de Capital Humano</b> del
@@ -30,9 +30,14 @@ export function AcercaDeNosotros() {
             </p>
           </div>
         </Transition>
-        <Transition animation="fade down" duration={800} visible={visible}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div className="contenedor-cartas">
+        <Transition animation="scale" duration={800} visible={visible}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div className="contenedor-dos-columnas">
               <CardAbout
                 imagen={misionImagen}
                 titulo="MISIÓN"
@@ -44,25 +49,28 @@ export function AcercaDeNosotros() {
                 descripcion="Consolidarnos como una unidad de referencia en investigación en salud en la provincia, reconocida por su excelencia científica, su impacto en la salud pública y su contribución al diseño e implementación de políticas y prácticas innovadoras. Conformar una Red Provincial de Investigación en salud, comprometida con el contexto local y con la generación de conocimiento alineado con las prioridades y necesidades de salud de la población."
               ></CardAbout>
             </div>
-            <div className="devpage-content-center">
-              <h3 className="devpage-collab-title">
-                PERSONAL DE LA UNIDAD DE INVESTIGACIÓN
-              </h3>
+          </div>
+        </Transition>
 
-              <div className="devpage-developers-list">
-                {personal.map((dev, index) => (
-                  <div
-                    key={index}
-                    className="devpage-developer-card"
-                    style={{
-                      borderLeft: `8px solid ${dev.color}`,
-                    }}
-                  >
-                    <h4>{dev.nombre}</h4>
-                    <p>{dev.descripcion}</p>
-                  </div>
-                ))}
-              </div>
+        <Transition animation="fade up" duration={800} visible={visible}>
+          <div className="acercade-content-center">
+            <h3 className="acercade-collab-title">
+              PERSONAL DE LA UNIDAD DE INVESTIGACIÓN
+            </h3>
+
+            <div className="acercade-personal-list">
+              {personal.map((dev, index) => (
+                <div
+                  key={index}
+                  className="acercade-personal-card"
+                  style={{
+                    borderLeft: `8px solid ${dev.color}`,
+                  }}
+                >
+                  <h4>{dev.nombre}</h4>
+                  <p>{dev.descripcion}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Transition>

@@ -44,21 +44,17 @@ export function Inicio() {
       >
         <Transition animation="fade up" duration={2000} visible={visible}>
           <Grid.Column>
-            <p className="tituloGrande">UNIDAD DE INVESTIGACIÓN</p>
-            <p className="tituloMediano">
+            <p className="tituloInicioGrande">UNIDAD DE INVESTIGACIÓN</p>
+            <p className="tituloInicioMediano">
               Promovemos el desarrollo de investigación en salud para contribuir
               a la equidad y a la calidad de la atención sanitaria para todos
               los habitantes de la provincia de Jujuy
             </p>
-            <p className="tituloPequenio">
+            <p className="tituloInicioPequenio">
               Para solicitar la admisión administrativa de su Protocolo de
               Investigación haga clic en el siguiente botón:
             </p>
-            <Button
-              className="buttonFormat"
-              as={Link}
-              to={"/procedimientoInicio"}
-            >
+            <Button className="buttonFormat" as={Link} to={"/procedimiento"}>
               <Icon name="file alternate outline" />
               Solicitar la admisión
             </Button>

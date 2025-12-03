@@ -13,7 +13,7 @@ export function ProcedimientoDeAdmisionInfo() {
   }, []);
 
   return (
-    <div className="acercade-page">
+    <div className="contenedor-page">
       <Transition animation="fade down" duration={800} visible={visible}>
         <div>
           <h2 className="tituloPage">
@@ -113,7 +113,7 @@ export function ProcedimientoDeAdmisionInfo() {
         <Button
           className="buttonFormatRegister"
           as={Link}
-          to="/procedimientoInicio"
+          to="/procedimiento"
           icon
           labelPosition="left"
         >

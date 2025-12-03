@@ -1,11 +1,10 @@
-@import "../../utils/variables_globales.scss";
-
+@use "../../utils/variables_globales.scss" as vars;
 .contenedorIcon{
     position:fixed;
     right: 10px;
     bottom: 10px;
     z-index: 100;
-    color: $color-primario;
+    color: vars.$color-primario;
     opacity: 50%;
     cursor: pointer;
 

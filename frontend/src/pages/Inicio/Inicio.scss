@@ -8,14 +8,14 @@
     }
 }
 
-.tituloGrande,
-.tituloMediano,
-.tituloPequenio {
+.tituloInicioGrande,
+.tituloInicioMediano,
+.tituloInicioPequenio {
     font-family: 'Montserrat', sans-serif; /* texto principal */
     color: vars.$color-primario;
 }
 
-.tituloGrande {
+.tituloInicioGrande {
     font-size: 56px;
     margin: 0;
     line-height: 1.2;
@@ -27,7 +27,7 @@
     }
 }
 
-.tituloMediano {
+.tituloInicioMediano {
     font-size: 26px;
     line-height: 1.3;
     margin: 40px 0;
@@ -38,7 +38,7 @@
     }
 }
 
-.tituloPequenio {
+.tituloInicioPequenio {
     font-size: 21px;
     line-height: 1.3;
     margin-bottom: 30px;

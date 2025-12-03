@@ -17,7 +17,7 @@ export function Contacto() {
   };
 
   return (
-    <div className="acercade-page">
+    <div className="contenedor-page">
       <Dimmer active={!mapaCargado} inverted>
         <Loader size="big">Espere un momento</Loader>
       </Dimmer>

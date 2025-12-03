@@ -12,7 +12,7 @@ export function ProcedimientoDeAdmisionInicio() {
   }, []);
 
   return (
-    <div className="acercade-page">
+    <div className="contenedor-page">
       <Grid.Column>
         <Transition animation="fade down" duration={800} visible={visible}>
           <div>
@@ -20,7 +20,7 @@ export function ProcedimientoDeAdmisionInicio() {
               PROCEDIMIENTO DE ADMISIÓN ADMINISTRATIVA DE PROTOCOLOS DE
               INVESTIGACIÓN
             </h2>
-            <p className="descripcionPage" style={{ marginBottom: "20px" }}>
+            <p className="descripcionPage">
               Para completar el <b>proceso de admisión administrativa</b> de
               protocolos de investigación en la{" "}
               <b>
@@ -36,12 +36,18 @@ export function ProcedimientoDeAdmisionInicio() {
           </div>
         </Transition>
         <Transition animation="fade left" duration={800} visible={visible}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div className="contenedor-cartas">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
+          >
+            <div className="contenedor-dos-columnas">
               <Button
                 className="buttonFormatInverted"
                 as={Link}
-                to={"/procedimientoInformacion"}
+                to={"/procedimiento/informacion"}
                 icon
                 labelPosition="left"
               >
@@ -51,7 +57,7 @@ export function ProcedimientoDeAdmisionInicio() {
               <Button
                 className="buttonFormat"
                 as={Link}
-                to={"/requisitos"}
+                to={"/procedimiento/verificacion"}
                 icon
                 labelPosition="right"
               >
